@@ -11,18 +11,31 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::singularResourceParameters();
 
-Auth::routes();
+// Rotas públicas
+	Route::get('/', function () {
+	    return view('welcome');
+	});
 
-Route::get('/home', 'HomeController@index')->name('home');
+	Auth::routes();
 
-Auth::routes();
+	Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Rotas relacionadas à autenticação
+	// Login
+	Route::get('/admin/entrar', 'Auth\LoginController@showLoginForm')->name('login');
+	Route::post('/admin/entrar', 'Auth\LoginController@login');
+	
+	// Logout
+	Route::post('/admin/sair', 'Auth\LoginController@logout')->name('logout');
 
-Auth::routes();
+	// Registration
+		Route::get('/admin/registrar', 'Auth\RegisterController@showRegistrationForm')->name('register');
+		Route::post('/admin/registrar', 'Auth\RegisterController@register');
 
-Route::get('/home', 'HomeController@index')->name('home');
+	// Redifinição de senha
+		Route::get('/admin/senha/redefinir', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+		Route::post('/admin/senha/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+		Route::get('/admin/senha/redefinir/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+		Route::post('/admin/senha/redefinir', 'Auth\ResetPasswordController@reset');
