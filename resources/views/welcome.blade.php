@@ -85,16 +85,14 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ url('/teste') }}">Teste</a>
                 </div>
 
                 <div>
                     <br>aaaaaaaaaaaaaaa<br>
+                    <div class = "x">
+                        <img height="40" width="40" src = "{{asset('img/a.jpg')}}">
+                    </div>
                 </div>
             </div>
         </div>
