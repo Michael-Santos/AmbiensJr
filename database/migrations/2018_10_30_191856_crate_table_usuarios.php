@@ -16,8 +16,10 @@ class CrateTableUsuarios extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 50);
-            $table->string('email', 50);
+            $table->string('email', 50)->unique();
             $table->string('senha', 60);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

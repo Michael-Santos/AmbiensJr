@@ -18,10 +18,11 @@ class CrateTableEventos extends Migration
             $table->string('nome', 100);
             $table->longText('descricao');
             $table->boolean('inscricao');
+            $table->string('imagem')->nullable();
             $table->date('data_evento');
-            $table->dateTime('hora_evento');
+            $table->time('hora_evento');
             $table->date('data_inscricao');
-            $table->dateTime('hora_inscricao');
+            $table->time('hora_inscricao');
             $table->timestamps();
         });
     }
