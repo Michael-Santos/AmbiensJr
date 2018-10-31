@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inscricao extends Model
 {
-	$table = 'eventos_usuarios';
+	protected $table = 'eventos_usuarios';
+
     protected $fillable = [
-        'usuario_id', 'evento_id', 'inscricao',
+        'usuario_id', 'evento_id',
     ];
 
 }

@@ -15,4 +15,3 @@ class Adm extends Model
     	return $this->belongsTo('App\Role', 'foreign_key');
     }
 }
-}
