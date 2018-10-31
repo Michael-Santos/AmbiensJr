@@ -18,11 +18,9 @@ Route::singularResourceParameters();
 	    return view('welcome');
 	});
 
-	//Auth::routes();
-
 	Route::get('/home', 'HomeController@index')->name('home');
 
-// Rotas relacionadas à autenticação
+// Rotas relacionadas à autenticação usuário normal
 	// Login
 	Route::get('/admin/entrar', 'Auth\LoginController@showLoginForm')->name('login');
 	Route::post('/admin/entrar', 'Auth\LoginController@login');
