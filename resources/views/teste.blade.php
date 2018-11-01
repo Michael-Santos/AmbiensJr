@@ -1,24 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>AmbiensJr</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="">
-		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" type="text/css" href="{{asset ('css/app.css')}}">
+		<!-- Dependencias locais -->
+		<link rel = "stylesheet" href="{{asset ('css/custom.css')}}">
+		<script src="{{asset ('js/custom.js')}}"></script>
 
-		<script src="{{asset ('js/app.js')}}"></script>
-		<script src="{{asset ('js/popper.min.js')}}"></script>
-		<script src="{{asset ('js/jquery-3.2.1.slim.min.js')}}"></script>
-		<script src="{{asset ('js/bootstrap.min.js')}}"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 
 	<body>
 		<header>
-			<nav class="navbar navbar-light navbar-expand-lg shadow" id="cabeca">
+			<nav class="navbar navbar-dark navbar-expand-lg shadow" id="cabeca">
 				<a class="navbar-brand" href="#">
-					<img src="{{asset ('img/logo.png')}}" id="cabeca" alt="">
+					<img src="//placehold.it/150x150/ccc" id="cabeca" alt="">
 				</a>
 
 				<!-- Botao/Toggle para ajustar a barra de navegação -->
@@ -46,40 +47,168 @@
 			</nav>
 		</header>
 
+		<div class = "container">
+			<div id="carrossel" class="carousel slide" data-ride="carousel">
+			  <ol class="carousel-indicators">
+			    <li data-target="#carrossel" data-slide-to="0" class="active"></li>
+			    <li data-target="#carrossel" data-slide-to="1"></li>
+			    <li data-target="#carrossel" data-slide-to="2"></li>
+			  </ol>
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img class="d-block w-100" src="//placehold.it/1280x400/777" alt="First slide">
+				  <div class="carousel-caption d-none d-md-block text-dark">
+				    <h4>Slide 1</h4>
+				    <p>Descrição slide 1</p>
+				  </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="//placehold.it/1280x400/999" alt="Second slide">
+				  <div class="carousel-caption d-none d-md-block text-dark">
+				    <h4>Slide 2</h4>
+				    <p>Descrição slide 2</p>
+				  </div>		      
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="//placehold.it/1280x400/bbb" alt="Third slide">
+				  <div class="carousel-caption d-none d-md-block text-dark">
+				    <h4>Slide 3</h4>
+				    <p>Descrição slide 3</p>
+				  </div>			      
+			    </div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carrossel" role="button" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carrossel" role="button" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="la.jpg" alt="Los Angeles">
-    </div>
+		<div class="container" id="tresbox">
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="single_what_we_do">
+						<div class = "top_line"></div>
+						<div class="what_we_do_figure">
+							<i class='fa fa-globe' style='font-size:48px;color:green'></i>
+						</div>
+						<h4 class="what_we_do_title">Missao</h4>
+						<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+						<a class="what_we_do_icon" href="#">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="single_what_we_do">
+						<div class = "top_line"></div>
+						<div class="what_we_do_figure">
+							<i class='fa fa-heart' style='font-size:48px;color:green'></i>
+						</div>
+						<h4 class="what_we_do_title">Valores</h4>
+						<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<a class="what_we_do_icon" href="#">
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="single_what_we_do">
+						<div class = "top_line"></div>
+						<div class="what_we_do_figure">
+							<i class='fa fa-eye' style='font-size:48px;color:green'></i>
+						</div>
+						<h4 class="what_we_do_title">Visão</h4>
+						<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+						<a class="what_we_do_icon" href="#">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="item">
-      <img src="chicago.jpg" alt="Chicago">
-    </div>
+		<div class = "container">
+			<div class="text-center text-white">
+				<div class="card-header" style = 'background-color: #33AA33; margin-bottom: 15px;'>
+					<h2>Serviços</h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-6">
+						<div class="single_what_we_do servicos">
+							<div class="what_we_do_figure">
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço I</i>
+							</div>
+							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<a class="what_we_do_icon" href="#">
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="single_what_we_do servicos">
+							<div class="what_we_do_figure">
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço II</i>
+							</div>
+							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<a class="what_we_do_icon" href="#">
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="single_what_we_do servicos">
+							<div class="what_we_do_figure">
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço III</i>
+							</div>
+							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<a class="what_we_do_icon" href="#">
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="single_what_we_do servicos">
+							<div class="what_we_do_figure">
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço IV</i>
+							</div>
+							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<a class="what_we_do_icon" href="#">
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>
 
-    <div class="item">
-      <img src="ny.jpg" alt="New York">
-    </div>
-  </div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+		<footer class="footer rodape">
+			<div class="container">
+				<div class = "row p-1">
+					<div class = "col-sm-5">
+						<span>Ambiens Jr - Empresa Júnior da Biologia.<br>
+						Todos os direitos reservados.<br>
+						Atualizado 2018</span>
+					</div>
+					<div class = "col-sm-5">
+						<span>Rodovia João Leme dos Santos, km 110, Sorocaba, São Paulo, Brasil<br>
+						Bairro Itinga CEP 18052 - 780<br>
+						ambiensjr@gmail.com<br>
+						</span>
+					</div>				
+					<div class = "col-sm-2 redes-sociais">
+						<a href = "https://www.facebook.com/empresaAmbiensjr/"><i class='fa fa-facebook-official' style='font-size:36px;color:green; font-weight: bold'></i></a>
+						<a href = "#"><i class='fa fa-instagram' style='font-size:36px;color:green; font-weight: bold'></i></a>
+					</div>														
+				</div>
+			</div>
+		</footer>
 
 	</body>
 </html>
