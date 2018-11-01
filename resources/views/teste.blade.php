@@ -31,17 +31,26 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 							<li class="nav-item">
-								<a class="nav-link" href = "#" id="" role="button">LINK</a>
+								<a class="nav-link" href = "#" id="" role="button">Início</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href = "#" id="" role="button">LINK</a>
+								<a class="nav-link" href = "#" id="" role="button">Equipe</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href = "#" id="" role="button">LINK</a>
+								<a class="nav-link" href = "#" id="" role="button">Projetos</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href = "#" id="" role="button">LINK</a>
-							</li>										
+								<a class="nav-link" href = "#" id="" role="button">Cursos</a>
+							</li>		
+							<li class="nav-item">
+								<a class="nav-link" href = "#" id="" role="button">Galeria</a>
+							</li>	
+							<li class="nav-item">
+								<a class="nav-link" href = "#" id="" role="button">Contato</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href = "#" id="" role="button">Processo Seletivo</a>
+							</li>												
 					</ul>
 				</div>	
 			</nav>
@@ -161,45 +170,57 @@
 					<div class="col-sm-6 col-md-6">
 						<div class="single_what_we_do servicos">
 							<div class="what_we_do_figure">
-								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço I</i>
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Auditoria Ambiental</i>
 							</div>
-							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<div class="what_we_do_content">Tem como finalidade determinar a natureza e a extensão de áreas de impacto ambiental em uma atividade existente. De acordo com as normas previstas na legislação brasileira, pretende obter e avaliar, de forma objetiva, as condições pelas quais as atividades existentes estão em conformidade com os critérios de auditoria e, comunicar os resultados deste processo ao cliente.</div>
+							<!--
 							<a class="what_we_do_icon" href="#">
 								<i class="fa fa-angle-right" aria-hidden="true"></i>
 							</a>
+							-->
+							<div class="what_we_do_icon"></div>
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-6">
 						<div class="single_what_we_do servicos">
 							<div class="what_we_do_figure">
-								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço II</i>
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Educação Ambiental</i>
 							</div>
-							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<div class="what_we_do_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit porta odio, id malesuada velit molestie non. Phasellus in orci non elit fringilla imperdiet at vitae dui. Nam sit amet enim auctor, commodo nulla in, fringilla arcu. Proin malesuada aliquam imperdiet. Duis accumsan malesuada tempus. Proin fringilla cursus lorem eget euismod. Sed porttitor eros tortor, ac posuere est bibendum vitae. Sed vulputate fringilla leo, sit amet finibus lorem pellentesque eget. Proin egestas purus non porta ultrices.</div>
+							<!--
 							<a class="what_we_do_icon" href="#">
 								<i class="fa fa-angle-right" aria-hidden="true"></i>
 							</a>
+							-->
+							<div class="what_we_do_icon"></div>
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-6">
 						<div class="single_what_we_do servicos">
 							<div class="what_we_do_figure">
-								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço III</i>
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> SIG - Sistemas de Informação</i>
 							</div>
-							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<div class="what_we_do_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit porta odio, id malesuada velit molestie non. Phasellus in orci non elit fringilla imperdiet at vitae dui. Nam sit amet enim auctor, commodo nulla in, fringilla arcu. Proin malesuada aliquam imperdiet. Duis accumsan malesuada tempus. Proin fringilla cursus lorem eget euismod. Sed porttitor eros tortor, ac posuere est bibendum vitae. Sed vulputate fringilla leo, sit amet finibus lorem pellentesque eget. Proin egestas purus non porta ultrices.</div>
+							<!--
 							<a class="what_we_do_icon" href="#">
 								<i class="fa fa-angle-right" aria-hidden="true"></i>
 							</a>
+							-->
+							<div class="what_we_do_icon"></div>
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-6">
 						<div class="single_what_we_do servicos">
 							<div class="what_we_do_figure">
-								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Serviço IV</i>
+								<i class='fa fa-envira' style='font-size:28px;color:green; font-weight: bold'> Levantamento de Fauna e Flora</i>
 							</div>
-							<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+							<div class="what_we_do_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit porta odio, id malesuada velit molestie non. Phasellus in orci non elit fringilla imperdiet at vitae dui. Nam sit amet enim auctor, commodo nulla in, fringilla arcu. Proin malesuada aliquam imperdiet. Duis accumsan malesuada tempus. Proin fringilla cursus lorem eget euismod. Sed porttitor eros tortor, ac posuere est bibendum vitae. Sed vulputate fringilla leo, sit amet finibus lorem pellentesque eget. Proin egestas purus non porta ultrices.</div>
+							<!--
 							<a class="what_we_do_icon" href="#">
 								<i class="fa fa-angle-right" aria-hidden="true"></i>
 							</a>
+							-->
+							<div class="what_we_do_icon"></div>
 						</div>
 					</div>				
 				</div>
