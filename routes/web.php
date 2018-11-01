@@ -24,6 +24,30 @@ Route::singularResourceParameters();
 	});
 
 
+	Route::get('/equipe', function () {
+	    return view('equipe');
+	});
+
+	Route::get('/projetos', function () {
+	    return view('projetos');
+	});	
+
+	Route::get('/cursos', function () {
+	    return view('cursos');
+	});
+
+	Route::get('/galeria', function () {
+	    return view('galeria');
+	});
+
+	Route::get('/contato', function () {
+	    return view('contato');
+	});	
+
+	Route::get('/pseletivo', function () {
+	    return view('pseletivo');
+	});
+
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	//Route::get('/admin/eventos/registrar', 'EventoController@create')->name('registrar_evento');
