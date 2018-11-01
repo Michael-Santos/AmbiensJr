@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>AmbiensJr - Template</title>
+		<title>AmbiensJr - Galeria</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -10,10 +10,13 @@
 		<script src="{{asset ('js/custom.js')}}"></script>
 
 		<!-- Dependencias CDN -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">	
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>		
 	</head>
 
 	<body>
@@ -57,9 +60,37 @@
 			</nav>
 		</header>
 
-		
-<!-- CONTAINER PRINCIPAL -->
 
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+			<a class="grouped_elements" href="{{asset ('img/galeria/teste/1.png')}}" class="fancybox" rel="ligthbox">
+				<img  src="{{asset ('img/galeria/teste/1.png')}}" class="zoom img-fluid "  alt="">
+			</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+			<a class="grouped_elements" href="{{asset ('img/galeria/teste/2.png')}}" class="fancybox" rel="ligthbox">
+				<img  src="{{asset ('img/galeria/teste/2.png')}}" class="zoom img-fluid "  alt="">
+			</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+			<a class="grouped_elements" href="{{asset ('img/galeria/teste/3.png')}}" class="fancybox" rel="ligthbox">
+				<img  src="{{asset ('img/galeria/teste/3.png')}}" class="zoom img-fluid "  alt="">
+			</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+			<a class="grouped_elements" href="{{asset ('img/galeria/teste/4.png')}}" class="fancybox" rel="ligthbox">
+				<img  src="{{asset ('img/galeria/teste/4.png')}}" class="zoom img-fluid "  alt="">
+			</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+			<a class="grouped_elements" href="{{asset ('img/galeria/teste/5.png')}}" class="fancybox" rel="ligthbox">
+				<img  src="{{asset ('img/galeria/teste/5.png')}}" class="zoom img-fluid "  alt="">
+			</a>
+			</div>												
+		</div>
+	</div>
+	<script>$("a.grouped_elements").fancybox();</script>
 
 		<footer class="footer rodape">
 			<div class="container">
