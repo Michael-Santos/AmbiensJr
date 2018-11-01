@@ -57,12 +57,6 @@
 			</nav>
 		</header>
 
-		<div class="container">
-			<h3 style="color:green;">Quem Somos?</h3>
-			<p class="text-justify">A JRBIO é uma associação sem fins econômicos formada por alunos da graduação dos cursos de Ciências Biológicas da UFSCar - Campus Sorocaba e com o objetivo de realizar consultorias na áreas de biologia e conservação ambiental, cursos e eventos de capacitação dos alunos para o mercado de trabalho, além da disseminação do espiríto empreendedor.<br>
-			A Empresa conta também com o apoio de professores altamente capacitados, provendo serviços de confiança, qualidade e eficiência.<p>
-		</div>
-
 		<div class = "container">
 			<div id="carrossel" class="carousel slide" data-ride="carousel">
 			  <ol class="carousel-indicators">
@@ -102,6 +96,14 @@
 			    <span class="sr-only">Next</span>
 			  </a>
 			</div>
+		</div>
+
+		<div class="container">
+			<h3 style="color:green; margin-left: 5%;">Quem Somos?</h3>
+				<p class="text-justify" style = "margin-left: 5%; margin-right: 5%">
+				A Ambiens Jr é uma associação sem fins econômicos formada por alunos da graduação dos cursos de Ciências Biológicas da UFSCar - Campus Sorocaba e com o objetivo de realizar consultorias na áreas de biologia e conservação ambiental, cursos e eventos de capacitação dos alunos para o mercado de trabalho, além da disseminação do espiríto empreendedor.<br>
+				A Empresa conta também com o apoio de professores altamente capacitados, provendo serviços de confiança, qualidade e eficiência.
+				<p>
 		</div>
 
 
