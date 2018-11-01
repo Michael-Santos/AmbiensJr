@@ -57,6 +57,12 @@
 			</nav>
 		</header>
 
+		<div class="container">
+			<h3 style="color:green;">Quem Somos?</h3>
+			<p class="text-justify">A JRBIO é uma associação sem fins econômicos formada por alunos da graduação dos cursos de Ciências Biológicas da UFSCar - Campus Sorocaba e com o objetivo de realizar consultorias na áreas de biologia e conservação ambiental, cursos e eventos de capacitação dos alunos para o mercado de trabalho, além da disseminação do espiríto empreendedor.<br>
+			A Empresa conta também com o apoio de professores altamente capacitados, provendo serviços de confiança, qualidade e eficiência.<p>
+		</div>
+
 		<div class = "container">
 			<div id="carrossel" class="carousel slide" data-ride="carousel">
 			  <ol class="carousel-indicators">
@@ -66,24 +72,24 @@
 			  </ol>
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/slide1.png')}}" alt="First slide">
+			      <img class="d-block w-100" src="{{asset ('img/placeholders/Sapo1.png')}}" alt="First slide">
 				  <div class="carousel-caption d-none d-md-block text-white">
-				    <h4>Slide 1</h4>
-				    <p>Descrição slide 1</p>
+				    <h4>Anfíbios!</h4>
+				    <p>Há um curso com pesquisa de campo sobre Anfíbios Anuros.</p>
 				  </div>
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/slide2.png')}}" alt="Second slide">
+			      <img class="d-block w-100" src="{{asset ('img/placeholders/Plantas1.png')}}" alt="Second slide">
 				  <div class="carousel-caption d-none d-md-block text-white">
-				    <h4>Slide 2</h4>
-				    <p>Descrição slide 2</p>
+				    <h4>Plantas como Placeholder</h4>
+				    <p>Por que não?</p>
 				  </div>		      
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/slide3.png')}}" alt="Third slide">
+			      <img class="d-block w-100" src="{{asset ('img/placeholders/Tucano1.png')}}" alt="Third slide">
 				  <div class="carousel-caption d-none d-md-block text-white">
-				    <h4>Slide 3</h4>
-				    <p>Descrição slide 3</p>
+				    <h4>Tucano!!!</h4>
+				    <p>Olha só essa beleza!</p>
 				  </div>			      
 			    </div>
 			  </div>
