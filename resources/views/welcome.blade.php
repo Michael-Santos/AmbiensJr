@@ -85,11 +85,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/teste') }}">Teste</a>
+                    <a href="{{ url('/teste') }}">Site - Versão 1</a>
                 </div>
 
                 <div>
-                    <br>aaaaaaaaaaaaaaa<br>
+                    <br>Por enquanto usando o padrão Laravel para evitar problemas com rotas<br>
                     <div class = "x">
                         <img height="40" width="40" src = "{{asset('img/a.jpg')}}">
                     </div>

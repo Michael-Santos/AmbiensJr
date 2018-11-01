@@ -98,23 +98,15 @@
 							<i class='fa fa-globe' style='font-size:48px;color:green'></i>
 						</div>
 						<h4 class="what_we_do_title">Missao</h4>
-						<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+						<div class="what_we_do_content">
+							Promover com excelência serviços de consultoria e soluções ambientais por meio da interface entre conhecimento acadêmico e empreendedorismo.
+						</div>
+						<!--
 						<a class="what_we_do_icon" href="#">
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
 						</a>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4">
-					<div class="single_what_we_do">
-						<div class = "top_line"></div>
-						<div class="what_we_do_figure">
-							<i class='fa fa-heart' style='font-size:48px;color:green'></i>
-						</div>
-						<h4 class="what_we_do_title">Valores</h4>
-						<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
-							<a class="what_we_do_icon" href="#">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
-							</a>
+						-->
+						<div class="what_we_do_icon"></div>
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4">
@@ -124,10 +116,37 @@
 							<i class='fa fa-eye' style='font-size:48px;color:green'></i>
 						</div>
 						<h4 class="what_we_do_title">Visão</h4>
-						<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+						<div class="what_we_do_content">
+							Ser referência no âmbito de soluções ambientais em Sorocaba e região, oferecendo serviços de qualidade e relevância no meio acadêmico-empresarial, aumentando o impacto da área de ciências biológicas dentro do movimento empresa júnior.
+						</div>
+						<!--
 						<a class="what_we_do_icon" href="#">
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
 						</a>
+						-->
+						<div class="what_we_do_icon"></div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="single_what_we_do">
+						<div class = "top_line"></div>
+						<div class="what_we_do_figure">
+							<i class='fa fa-heart' style='font-size:48px;color:green'></i>
+						</div>
+						<h4 class="what_we_do_title">Valores</h4>
+						<div class="what_we_do_content">
+							- Ética</br>
+							- Trabalho em Equipe</br>
+							- Comprometimento</br>
+							- Responsabilidade</br>
+							- Excelência</br>
+						</div>
+						<!--
+						<a class="what_we_do_icon" href="#">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</a>
+						-->
+						<div class="what_we_do_icon"></div>
 					</div>
 				</div>
 			</div>
