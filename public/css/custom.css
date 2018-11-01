@@ -1,3 +1,5 @@
+/* TEMPLATE */
+
 #cabeca {
   background-image: url("../img/placeholders/header.png");
   background-repeat: no-repeat;
@@ -23,6 +25,21 @@
 	margin-top: 25px;
 }
 
+.rodape {
+	margin-top: 15px;
+	padding-bottom: 15px;
+	background-color: #333;
+	border-top: 1px solid #3a3;
+	position: relative;
+	color: #aaa;
+	font-size: 14px;
+}
+
+.redes-sociais {
+	text-align: right;
+}
+
+/* HOME */
 #tresbox {
 	margin-top: 40px;
 }
@@ -96,22 +113,11 @@
     padding: 2px 3px 2px 5px;
 }
 
-.rodape {
-	margin-top: 15px;
-	padding-bottom: 15px;
-	background-color: #333;
-	border-top: 1px solid #3a3;
-	position: relative;
-	color: #aaa;
-	font-size: 14px;
-}
 
-.redes-sociais {
-	text-align: right;
-}
 
+/* PAGINA EQUIPE */
 #team {
-    background: #eee !important;
+    background: #fefefe !important;
 }
 
 .btn-primary:hover,
@@ -141,7 +147,7 @@ section .section-title {
 
 #team .card {
     border: none;
-    background: #ffffff;
+    background: #EDEFED;
 }
 
 .image-flip:hover .backside,
@@ -235,4 +241,37 @@ section .section-title {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+}
+
+
+
+/*PAGINA CONTATO*/
+#contact{
+    background-color:#FEFEFE;
+}
+
+#contact .well{
+    margin-top:5px;
+    border-radius:0;
+}
+
+#contact .form-control{
+    border-radius: 0;
+    border:2px solid #1e1e1e;
+}
+
+#contact button{
+    border-radius:0;
+    border:2px solid #1e1e1e;
+}
+
+#contact .row{
+    margin-bottom:30px;
+}
+
+@media (max-width: 768px) { 
+    #contact iframe {
+        margin-bottom: 15px;
+    }
+    
 }
