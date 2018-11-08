@@ -76,8 +76,8 @@
 						</span>
 					</div>				
 					<div class = "col-sm-2 redes-sociais">
-						<a href = "https://www.facebook.com/empresaAmbiensjr/"><i class='fa fa-facebook-official' style='font-size:36px;color:green; font-weight: bold'></i></a>
-						<a href = "#"><i class='fa fa-instagram' style='font-size:36px;color:green; font-weight: bold'></i></a>
+						<a href = "https://www.facebook.com/empresaAmbiensjr/"><i class='fa fa-facebook-official' style='font-size:36px;color:#666666; font-weight: bold'></i></a>
+						<a href = "#"><i class='fa fa-instagram' style='font-size:36px;color:#666666; font-weight: bold'></i></a>
 					</div>														
 				</div>
 			</div>
