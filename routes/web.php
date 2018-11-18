@@ -48,6 +48,10 @@ Route::singularResourceParameters();
 	    return view('pseletivo');
 	});
 
+	Route::get('/userarea', function () {
+	    return view('userarea');
+	});
+
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	//Route::get('/admin/eventos/registrar', 'EventoController@create')->name('registrar_evento');
