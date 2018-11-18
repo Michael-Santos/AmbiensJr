@@ -85,3 +85,13 @@ Route::singularResourceParameters();
 	Route::get('/admin/home', function () {
 	    return view('dashboard/home_dash');
 	});
+
+	//cursos
+	Route::get('/admin/cursosHome', function () {
+	    return view('dashboard/cursos_db_home');
+	});
+
+	//cursos cadastrar
+	Route::get('/admin/cursos_cadastro', function () {
+	    return view('dashboard/cursos_db_novo');
+	});

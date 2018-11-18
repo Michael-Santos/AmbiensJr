@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section id="userarea">
+<section id="home_dashboard">
     <div class="container">
         <h1>Bem-vindo(a) à area do Administrador</h1>
         <p> Usuário conectado como: *nome* </p>
