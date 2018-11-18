@@ -78,3 +78,10 @@ Route::singularResourceParameters();
 	Route::post('/admin/senha/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 	Route::get('/admin/senha/redefinir/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 	Route::post('/admin/senha/redefinir', 'Auth\ResetPasswordController@reset');
+
+//Rotas para dashboard
+
+	//home
+	Route::get('/admin/home', function () {
+	    return view('dashboard/home_dash');
+	});
