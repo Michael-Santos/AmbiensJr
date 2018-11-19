@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
 
@@ -35,7 +35,7 @@
 				<div class="form-group">
 				    <label for="img_curso">Imagem/Banner para o curso</label>
 				    <input type="file" class="form-control-file" id="img_curso">
-				  </div>
+				</div>
 
 				<div class="form-row">
 					<div class="form-check form-check-inline">

@@ -115,7 +115,6 @@ Route::singularResourceParameters();
 
 //AREA DE PROJETOS
 	//projetos_home
-	//cursos
 	Route::get('/admin/projetos_home', function () {
 	    return view('dashboard/projetos_db_home');
 	});
@@ -123,4 +122,14 @@ Route::singularResourceParameters();
 	//cursos cadastrar
 	Route::get('/admin/projetos_cadastro', function () {
 	    return view('dashboard/projetos_db_novo');
+	});
+
+//AREA DE PROCESSO SELETIVO
+	Route::get('/admin/ps_adm', function () {
+	    return view('dashboard/pseletivo_adm');
+	});
+
+//AREA DE USUARIO
+	Route::get('/admin/adm_perfil', function () {
+	    return view('dashboard/adm_perfil');
 	});
