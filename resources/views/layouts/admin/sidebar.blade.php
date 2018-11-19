@@ -71,6 +71,7 @@
                 <span class="menu-collapsed">Galeria</span>
             </div>
         </a>
+
         <a href="#" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-file fa-fw mr-3"></span>

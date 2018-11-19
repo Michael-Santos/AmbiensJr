@@ -115,12 +115,24 @@ Route::singularResourceParameters();
 
 //AREA DE PROJETOS
 	//projetos_home
-	//cursos
+	//projetos
 	Route::get('/admin/projetos_home', function () {
 	    return view('dashboard/projetos_db_home');
 	});
 
-	//cursos cadastrar
+	//projetos cadastrar
 	Route::get('/admin/projetos_cadastro', function () {
 	    return view('dashboard/projetos_db_novo');
 	});
+
+//AREA DE GALERIA
+	//galeria_home
+	Route::get('/admin/galeria_home', function () {
+	    return view('dashboard/galeria_db_home');
+	});	
+
+	//galeria_cadastrar
+	Route::get('/admin/galeria_cadastro', function () {
+	    return view('dashboard/galeria_db_novo');
+	});	
+
