@@ -112,3 +112,15 @@ Route::singularResourceParameters();
 	Route::get('/admin/cursos_lista', function () {
 	    return view('dashboard/cursos_db_presenca');
 	});
+
+//AREA DE PROJETOS
+	//projetos_home
+	//cursos
+	Route::get('/admin/projetos_home', function () {
+	    return view('dashboard/projetos_db_home');
+	});
+
+	//cursos cadastrar
+	Route::get('/admin/projetos_cadastro', function () {
+	    return view('dashboard/projetos_db_novo');
+	});
