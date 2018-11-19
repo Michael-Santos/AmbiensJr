@@ -35,32 +35,7 @@
 
         <!-- Bootstrap row -->
         <div class="row" id="body-row">
-            @include('layouts.admin.sidebar')
-
-            <!-- MAIN -->
-            <div class="col">
-                
-                @yield('content')
-
-                <h1>
-                    Collapsing Menu
-                    <small class="text-muted">Version 2.1</small>
-                </h1>
-                
-                <div class="card">
-                    <h4 class="card-header">Requirements</h4>
-                    <div class="card-body">
-                        <ul>
-                            <li>JQuery</li>
-                            <li>Bootstrap 4 beta-3</li>
-                        </ul>
-                    </div>
-                </div>
-               
-
-
-            </div><!-- Main Col END -->
-            
+            @include('layouts.admin.sidebar')            
         </div><!-- body-row END -->
     </div>
 </body>

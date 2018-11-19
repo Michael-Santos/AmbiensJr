@@ -136,3 +136,12 @@ Route::singularResourceParameters();
 	    return view('dashboard/galeria_db_novo');
 	});	
 
+//AREA DE PROCESSO SELETIVO
+	Route::get('/admin/ps_adm', function () {
+	    return view('dashboard/pseletivo_adm');
+	});
+
+//AREA DE USUARIO
+	Route::get('/admin/adm_perfil', function () {
+	    return view('dashboard/adm_perfil');
+	});
