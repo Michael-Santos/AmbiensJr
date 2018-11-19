@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section id="eventos_db_home">
+<section id="cursos_db_home">
     <div class="container">
         <h1>Cursos</h1>
         <p class="text-justify">Área destinada à cursos<br>
