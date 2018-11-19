@@ -86,12 +86,24 @@ Route::singularResourceParameters();
 	    return view('dashboard/home_dash');
 	});
 
+//AREA DOS CURSOS
+
 	//cursos
-	Route::get('/admin/cursosHome', function () {
+	Route::get('/admin/cursos_home', function () {
 	    return view('dashboard/cursos_db_home');
 	});
 
 	//cursos cadastrar
 	Route::get('/admin/cursos_cadastro', function () {
 	    return view('dashboard/cursos_db_novo');
+	});
+
+	//cursos historico
+	Route::get('/admin/cursos_historico', function () {
+	    return view('dashboard/cursos_db_fechados');
+	});
+
+	//cursos em andamento
+	Route::get('/admin/cursos_abertos', function () {
+	    return view('dashboard/cursos_db_abertos');
 	});
