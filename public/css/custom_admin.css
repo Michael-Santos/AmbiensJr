@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+.navbar-expand-md {
+    height: 70px;
+}
+
 .img-perfil {
   width: 60px;
   height: 60px;

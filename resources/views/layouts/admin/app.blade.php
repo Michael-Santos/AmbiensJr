@@ -41,18 +41,12 @@
   </button>
   <a class="navbar-brand" href="#">
     <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    <span class="menu-collapsed">My Bar</span>
+    <span class="menu-collapsed">   Painel Administrativo</span>
   </a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Sair <span class="sr-only">(current)</span></a>
       </li>
       
       <!-- This menu is hidden in bigger devices with d-sm-none. 
@@ -62,10 +56,10 @@
           Menu
         </a>
         <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
-            <a class="dropdown-item" href="#">Dashboard</a>
-            <a class="dropdown-item" href="#">Profile</a>
-            <a class="dropdown-item" href="#">Tasks</a>
-            <a class="dropdown-item" href="#">Etc ...</a>
+            <a class="dropdown-item" href="#">Home</a>
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="#">Equipe</a>
+            <a class="dropdown-item" href="#">Setores</a>
         </div>
       </li><!-- Smaller devices menu END -->
       
