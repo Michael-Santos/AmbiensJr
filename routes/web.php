@@ -107,3 +107,8 @@ Route::singularResourceParameters();
 	Route::get('/admin/cursos_abertos', function () {
 	    return view('dashboard/cursos_db_abertos');
 	});
+
+	//lista de presenca
+	Route::get('/admin/cursos_lista', function () {
+	    return view('dashboard/cursos_db_presenca');
+	});

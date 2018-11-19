@@ -32,6 +32,11 @@
 					</div>
 				</div>
 
+				<div class="form-group">
+				    <label for="img_curso">Imagem/Banner para o curso</label>
+				    <input type="file" class="form-control-file" id="img_curso">
+				  </div>
+
 				<div class="form-row">
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="checkbox" name="curso_vagas" id="curso_vagas">
