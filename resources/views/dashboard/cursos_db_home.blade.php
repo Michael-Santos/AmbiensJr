@@ -5,17 +5,17 @@
 <section id="eventos_db_home">
     <div class="container">
         <h1>Cursos</h1>
-        <p>Área destinada à cursos<br>
+        <p class="text-justify">Área destinada à cursos<br>
         Escolha uma das seguintes opções ou veja a lista de cursos abaixo:</p>
 
         <div class="container">
             <a class="btn btn-secondary" href="{{ url('admin/cursos_cadastro') }}">Criar Curso</a>
-            <a class="btn btn-secondary">Curso Abertos</a>
-            <a class="btn btn-secondary">Curso Finalizados</a>
+            <a class="btn btn-secondary" href="{{ url('admin/cursos_abertos') }}">Curso Abertos</a>
+            <a class="btn btn-secondary" href="{{ url('admin/cursos_historico') }}">Curso Finalizados</a>
         </div>
 
         <div class="table-responsive mt-3">
-            <table class="table tables-triped">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Curso</th>
