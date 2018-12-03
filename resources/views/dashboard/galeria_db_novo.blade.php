@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
 
@@ -16,7 +16,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="galeria_descricao">Descrição do galeria</label>
+					<label for="galeria_descricao">Descrição da galeria</label>
 					<input type="text" class="form-control" name="galeria_descricao" id="galeria_descricao" placeholder="Descrição breve..." required>
 				</div>
 

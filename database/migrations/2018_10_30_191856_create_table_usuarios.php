@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProcessosSeletivos extends Migration
+class CreateTableUsuarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateProcessosSeletivos extends Migration
      */
     public function up()
     {
-        Schema::create('processos_seletivos', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('ativo');
-            $table->text('descricao');
-            $table->string('link_driver');
+            $table->string('nome', 50);
+            $table->string('email', 50)->unique();
+            $table->string('senha', 60);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateProcessosSeletivos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('processos_seletivos');
+        Schema::dropIfExists('usuarios');
     }
 }

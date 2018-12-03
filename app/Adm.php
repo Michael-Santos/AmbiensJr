@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Adm extends Model
 {
     protected $fillable = [
-        'nome', 'email', 'senha', 'role_id',
+        'nome',
+        'email',
+        'senha',
+        'role_id'
+    ];
+
+    protected $hidden = [
+        'senha'
     ];
 
     public function roles()

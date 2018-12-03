@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
 
@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Galeria</h1>
         <p class="text-justify">Área destinada à Galeria<br>
-        Nesta área você pode: <a class="btn btn-outline-primary btn-sm" href="{{ url('admin/projetos_cadastro') }}">Adicionar uma Galeria</a><br>
+        Nesta área você pode: <a class="btn btn-outline-primary btn-sm" href="{{ url('admin/galeria_cadastro') }}">Adicionar uma Galeria</a><br>
         Ou então buscar por galerias existente abaixo para editar ou excluir</p>
 
         <div class="table-responsive mt-3">
