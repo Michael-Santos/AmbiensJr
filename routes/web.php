@@ -15,7 +15,7 @@ Route::singularResourceParameters();
 
 // Rotas públicas
 	Route::get('/', function () {
-	    return view('layouts.admin.app');
+	    return view('home');
 	});
 
 
