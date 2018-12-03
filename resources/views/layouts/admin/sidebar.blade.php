@@ -80,3 +80,7 @@
         </a>
     </ul><!-- List Group END-->
 </div><!-- sidebar-container END -->
+
+<main>
+    @yield('content')
+<main>

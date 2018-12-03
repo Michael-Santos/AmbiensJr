@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventsTable extends Migration
+class CreateProcessosSeletivos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('processos_seletivos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('descricao');
-            $table->string('permiteInsercao');
-            $table->date('dataEvento');
-            $table->string('foto');
+            $table->text('descricao');
+            $table->string('link_driver');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('processos_seletivos');
     }
 }
