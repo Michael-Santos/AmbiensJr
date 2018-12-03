@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Setor;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-
-class SetorController extends Controller
+class MembroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class SetorController extends Controller
      */
     public function index()
     {
-        //return view("dashboard.galeria_db_home");   
+        //
     }
 
     /**
@@ -40,15 +39,27 @@ class SetorController extends Controller
             'nome' => 'required'
         ]);
 
-        $setor = new Setor();
+        /* Verifica se existe o setor selecionado, caso não existe retorna erro, caso contrário salva */
+        if (!empty($request->setor)){
+            if ($existeSetor = DB::table('setores')->where('id', $request->setor)->doesntExist()){
+                $response = array(
+                  'status' => 'error',
+                  'msg' => 'Não existe o setor informado'
+                );
+                return response()->json($response);
+            }
+        }
+
+        $setor = new Membro();
         $setor->nome = $request->nome;
+        $setor->
         $setor->save();
 
         $response = array(
           'status' => 'success',
           'msg' => 'Setor cadastrado com sucesso'
         );
-      return response()->json($response);
+        return response()->json($response);
     }
 
     /**
@@ -93,6 +104,6 @@ class SetorController extends Controller
      */
     public function destroy($id)
     {
-        
+        //
     }
 }

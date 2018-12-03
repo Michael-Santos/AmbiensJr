@@ -86,6 +86,11 @@ Route::singularResourceParameters();
 	    return view('dashboard/home_dash');
 	});
 
+
+// Setores e membros
+	Route::resource('admin/setores', 'SetorController');
+	Route::resource('admin/membros', 'MembroController');
+
 //AREA DOS CURSOS
 
 	//cursos
