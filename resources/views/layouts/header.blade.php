@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark text-white h5 navbar-expand-lg shadow" id="cabeca">
 	<a class="navbar-brand" href="#">
-		<img src="{{asset ('img/placeholders/logo.png')}}" id="cabeca" alt="">
+		<img src="{{asset ('img/layout/logo.png')}}" id="cabeca" alt="">
 	</a>
 
 	<!-- Botao/Toggle para ajustar a barra de navegação -->

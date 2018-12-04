@@ -32,9 +32,9 @@
 					</div>
 				</div>
 
-				<div class="form-group">
-				    <label for="img_curso">Imagem/Banner para o curso</label>
-				    <input type="file" class="form-control-file" id="img_curso">
+				 <div class="custom-file">
+				    <input type="file" class="custom-file-input" id="img_curso">
+				    <label class="custom-file-label" for="img_curso">Imagem/Banner para o curso</label>
 				</div>
 
 				<div class="form-row">
