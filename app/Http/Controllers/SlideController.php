@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Slide;
 use Illuminate\Http\Request;
-use Log;
 
 class SlideController extends Controller
 {
@@ -15,7 +14,8 @@ class SlideController extends Controller
      */
     public function index()
     {
-        return view('dashboard/slides/index');
+        $data['slides'] = Slide::orderByRaw('id')->paginate(50);
+        return view('dashboard/slides/index', $data);
     }
 
     /**
@@ -25,7 +25,7 @@ class SlideController extends Controller
      */
     public function create()
     {
-        return view('dashboard/slides_db_novo');
+        return view('dashboard/slides/create');
     }
 
     /**

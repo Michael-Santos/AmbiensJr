@@ -2,9 +2,9 @@
 
 @section('content')
 
-@if(isset($success))
+@if(session('success'))
   <div class="alert alert-success">
-    {{ $success }}
+    {{ session('success') }}
   </div>
 @endif
 @if($errors->any())

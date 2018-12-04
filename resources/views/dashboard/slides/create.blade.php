@@ -23,9 +23,8 @@
 				 <div class="form-group">
 				 	<label for="img_slide">Foto do slide</label>
 					<div class="custom-file">
-					    <input type="file" class="custom-file-input" id="img_slide" name="img_slide" required>
+					    <input type="file" class="custom-file-input" id="img_slide" name="img_slide">
 					    <label class="custom-file-label" for="img_slide">Escolha a foto</label>
-					    <div class="invalid-feedback">Example invalid custom file feedback</div>
 					</div>
 				</div>
 			</div>
