@@ -7,7 +7,8 @@
 		<h1>Cadastrar Slide</h1>
 		<p>Preencha o formulário abaixo e não esqueça de revisar antes de confirmar o cadatro.</p>
 
-		<form class="border border-light px-1 py-3 rounded">
+		<form class="border border-light px-1 py-3 rounded" action="{{ route('slides.store') }}" enctype="multipart/form-data" method="post">
+			@csrf
 			<h3>Informações</h3>
 			<div class="border px-3 py-3 my-2 rounded">
 				<div class="form-group">
@@ -22,7 +23,7 @@
 				 <div class="form-group">
 				 	<label for="img_slide">Foto do slide</label>
 					<div class="custom-file">
-					    <input type="file" class="custom-file-input" id="img_slide">
+					    <input type="file" class="custom-file-input" id="img_slide" name="img_slide">
 					    <label class="custom-file-label" for="img_slide">Escolha a foto</label>
 					</div>
 				</div>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Slide;
 use Illuminate\Http\Request;
+use Log;
 
 class SlideController extends Controller
 {
@@ -13,7 +15,7 @@ class SlideController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard/slides/index');
     }
 
     /**
@@ -34,7 +36,22 @@ class SlideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'titulo_slide' => 'required',
+            'descricao_slide' => 'required',
+            'img_slide' => 'image | required'
+        ]);
+
+        $slide = new Slide();
+        $slide->titulo = $request->titulo_slide;
+        $slide->descricao = $request->descricao_slide;
+        
+        $slide->url_imagem = uniqid() . '.' . $request->img_slide->extension();
+        $request->img_slide->storeAs('public', $slide->url_imagem);
+
+        $slide->save();
+
+        return redirect()->route('slides.index', $slide)->with('success', 'Slide cadastrado com sucesso.');
     }
 
     /**
