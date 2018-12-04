@@ -54,9 +54,6 @@ Route::singularResourceParameters();
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
-	//Route::get('/admin/eventos/registrar', 'EventoController@create')->name('registrar_evento');
-	//Route::post('/admin/eventos/registrar', 'EventoController@store');
-
 	Route::model('evento', 'App\Evento');
 	Route::resource('eventos', 'EventoController');
 
@@ -140,6 +137,9 @@ Route::singularResourceParameters();
 	Route::get('/admin/galeria_cadastro', function () {
 	    return view('dashboard/galeria_db_novo');
 	});	
+
+//AREA DE PROCESSO SLIDE
+	Route::resource('admin/slides', 'SlideController');
 
 //AREA DE PROCESSO SELETIVO
 	Route::get('/admin/ps_adm', function () {
