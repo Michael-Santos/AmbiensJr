@@ -47,7 +47,7 @@ class SlideController extends Controller
         $slide->descricao = $request->descricao_slide;
         
         $slide->url_imagem = uniqid() . '.' . $request->img_slide->extension();
-        $request->img_slide->storeAs('public', $slide->url_imagem);
+        $request->img_slide->storeAs('public/slides', $slide->url_imagem);
 
         $slide->save();
 

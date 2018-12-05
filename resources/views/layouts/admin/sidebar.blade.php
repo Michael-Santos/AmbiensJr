@@ -53,14 +53,14 @@
 
         <a href="#" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fa fa-handshake-o fa-fw mr-3"></span>
+                <span class="fa fa-briefcase mr-3"></span>
                 <span class="menu-collapsed">Projetos</span>
             </div>
         </a>
 
         <a href="#" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fa fa-calendar fa-fw mr-3"></span>
+                <span class="fa fa-calendar-alt mr-3"></span>
                 <span class="menu-collapsed">Cursos</span>
             </div>
         </a>
