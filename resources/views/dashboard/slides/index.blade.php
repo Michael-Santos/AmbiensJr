@@ -88,7 +88,6 @@
 
 
 
-
 <!-- Modal Exclusão -->
 <div id="modal-delete-slide" class="modal-delete modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-delete-slide" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

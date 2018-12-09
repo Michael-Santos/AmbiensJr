@@ -4,7 +4,6 @@ namespace App;
 
 use Storage;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
 
 class Slide extends Model
 {
@@ -25,10 +24,8 @@ class Slide extends Model
     public function deleteImagem()
     {
         if(Storage::disk('local')->exists('public/slides/' . $this->url_imagem)) {
-        	Log::info("Deu bom");
             return Storage::disk('local')->delete('public/slides/' . $this->url_imagem);
         } else {
-        	Log::info("Deu ruim");
             return false;
         }
     }
