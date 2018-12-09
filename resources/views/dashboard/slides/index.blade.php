@@ -123,7 +123,7 @@
 		var url = $(this).data(url);
 		var token = $('meta[name=csrf-token]').attr('content');
 
-		$.post(url, { _method: "delete", _token: token })
+		$.post(url, { _method: "delete", _token: token });
 	});
 
 	/* Passa os dados para o modal de deleção */
