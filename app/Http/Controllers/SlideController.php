@@ -98,8 +98,15 @@ class SlideController extends Controller
     public function destroy($id)
     {
         $slide = Slide::find($id);
-        $slide->delete();
-        
-        return redirect('slides.index')->with('sucess', 'Slide deletado com sucesso');
+
+        if($slide->delete()) {
+            return response()->json([
+                'status' => 'success',
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+            ]);
+        }
     }
 }
