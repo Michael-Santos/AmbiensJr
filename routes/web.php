@@ -83,6 +83,12 @@ Route::singularResourceParameters();
 	    return view('dashboard/home_dash');
 	});
 
+	//home
+	Route::get('/admin', function () {
+	    return view('dashboard/home_dash');
+	});
+
+
 
 // Setores e membros
 	Route::resource('admin/setores', 'SetorController');
@@ -138,6 +144,11 @@ Route::singularResourceParameters();
 	    return view('dashboard/galeria_db_novo');
 	});	
 
+	//galeria_cadastrar
+	Route::get('/admin/galeria_editar', function () {
+	    return view('dashboard/galeria_db_editar');
+	});	
+
 //AREA DE PROCESSO SLIDE
 	Route::resource('admin/slides', 'SlideController');
 
@@ -150,3 +161,5 @@ Route::singularResourceParameters();
 	Route::get('/admin/adm_perfil', function () {
 	    return view('dashboard/adm_perfil');
 	});
+
+
