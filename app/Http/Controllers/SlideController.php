@@ -74,7 +74,8 @@ class SlideController extends Controller
      */
     public function edit($id)
     {
-        //
+        $slide = Slide::find($id);        
+        return view('dashboard/slides/edit')->with("slide", $slide);
     }
 
     /**
@@ -86,7 +87,25 @@ class SlideController extends Controller
      */
     public function update(Request $request, Slide $slide)
     {
-        //
+        $validatedData = $request->validate([
+            'titulo_slide' => 'required',
+            'descricao_slide' => 'required',
+            'img_slide' => 'image'
+        ]);
+
+        $slide->titulo = $request->titulo_slide;
+        $slide->descricao = $request->descricao_slide;
+        
+        
+        if($request->hasFile('img_slide')) {
+            $slide->deleteImagem();
+            $slide->url_imagem = uniqid() . '.' . $request->img_slide->extension();
+            $request->img_slide->storeAs('public/slides', $slide->url_imagem);
+        }
+
+        $slide->save();
+
+        return redirect()->route('slides.edit', $slide)->with('success', 'Slide alterado com sucesso.');        
     }
 
     /**

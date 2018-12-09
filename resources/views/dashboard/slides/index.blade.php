@@ -49,7 +49,11 @@
                         	</a>
                         </td>
                         
-                        <td style="text-align: center;"><img src="{{asset ('img/icones/editar.png')}}" style="height: 25px;"></td>
+                        <td style="text-align: center;">
+                        	<a href="{{ route('slides.edit', $slide->id) }}">
+                        		<img src="{{asset ('img/icones/editar.png')}}" style="height: 25px;">
+                        	</a>
+                        </td>
 
                         <td style="text-align: center;">
                         	<a href="#" data-toggle="modal" data-target="#modal-delete-slide" data-remove=".slide-{{ $slide->id }}" data-url="{{ route('slides.destroy', $slide) }}">
