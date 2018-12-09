@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Slide;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SlideController extends Controller
 {
@@ -14,7 +15,7 @@ class SlideController extends Controller
      */
     public function index()
     {
-        $data['slides'] = Slide::orderByRaw('id')->paginate(50);
+        $data['slides'] = Slide::orderByRaw('id')->paginate(5);
         return view('dashboard/slides/index', $data);
     }
 
@@ -83,7 +84,7 @@ class SlideController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Slide $slide)
     {
         //
     }
@@ -96,6 +97,9 @@ class SlideController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $slide = Slide::find($id);
+        $slide->delete();
+        
+        return redirect('slides.index')->with('sucess', 'Slide deletado com sucesso');
     }
 }
