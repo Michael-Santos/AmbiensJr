@@ -154,6 +154,9 @@ Route::singularResourceParameters();
 //AREA DE SLIDE
 	Route::resource('admin/slides', 'SlideController');
 
+//AREA DE GALERIA
+	Route::resource('admin/galeria', 'GaleriaController');
+
 //AREA DE SERVIÇO
 	Route::resource('admin/servicos', 'ServicoController');
 
