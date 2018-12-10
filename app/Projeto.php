@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Projetos extends Model
+class Projeto extends Model
 {
+	protected $table = 'projetos';
+
     /**
      * Deletes the Project image
      * @return bool

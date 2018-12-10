@@ -122,16 +122,7 @@ Route::singularResourceParameters();
 	});
 
 //AREA DE PROJETOS
-	//projetos_home
-	//projetos
-	Route::get('/admin/projetos_home', function () {
-	    return view('dashboard/projetos_db_home');
-	});
-
-	//projetos cadastrar
-	Route::get('/admin/projetos_cadastro', function () {
-	    return view('dashboard/projetos_db_novo');
-	});
+	Route::resource('admin/projetos', 'ProjetoController');
 
 //AREA DE GALERIA
 	//galeria_home

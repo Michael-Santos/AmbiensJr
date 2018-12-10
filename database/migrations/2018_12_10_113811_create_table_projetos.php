@@ -17,7 +17,7 @@ class CreateTableProjetos extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->string('descricao');
-            $table->string('url_imagem');
+            $table->string('url_imagem')->nullable();
             $table->string('estado');
 
             $table->timestamps();
