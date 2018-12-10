@@ -154,6 +154,9 @@ Route::singularResourceParameters();
 //AREA DE SLIDE
 	Route::resource('admin/slides', 'SlideController');
 
+//AREA DE SERVIÇO
+	Route::resource('admin/servicos', 'ServicoController');
+
 //AREAD DE PROCESSO SELETIVO 
 	Route::get('/admin/processo_seletivo', 'ProcessoSeletivoController@edit')->name('processo.edit');
 

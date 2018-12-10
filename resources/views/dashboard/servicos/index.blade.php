@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section id="projetos_db_home">
+<section id="servicos_db_home">
     <div class="container">
 
         @if(session('success'))
@@ -21,34 +21,34 @@
         <div id="resultado">
         </div>
 
-        <h1>Projetos</h1>
-        <p class="text-justify">Área destinada à Projetos<br>
-        Nesta área você pode: <a class="btn btn-outline-primary btn-sm" href="{{ route('projetos.create') }}">Adicionar um Projeto</a><br>
-        Ou então buscar por projetos existente abaixo para editar ou excluir</p>
+        <h1>Serviços</h1>
+        <p class="text-justify">Área destinada à Serviços<br>
+        Nesta área você pode: <a class="btn btn-outline-primary btn-sm" href="{{ route('servicos.create') }}">Adicionar um serviço</a><br>
+        Ou então buscar por serviço existente abaixo para editar ou excluir</p>
 
         <div class="table-responsive mt-3">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Projeto</th>
+                        <th scope="col">Nome</th>
                         <th scope="col" style="text-align: center;">Editar</th>
                         <th scope="col" style="text-align: center;">Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
                     
-                    @foreach($projetos as $projeto)
-                    <tr class="projeto-{{ $projeto->id }}">
-                    <td>{{ $projeto->titulo }}</td>
+                    @foreach($servicos as $servico)
+                    <tr class="servico-{{ $servico->id }}">
+                    <td>{{ $servico->titulo }}</td>
                     
                     <td style="text-align: center;">
-                        <a href="{{ route('projetos.edit', $projeto->id) }}">
+                        <a href="{{ route('servicos.edit', $servico->id) }}">
                             <img src="{{asset ('img/icones/editar.png')}}" style="height: 25px;">
                         </a>
                     </td>
 
                     <td style="text-align: center;">
-                        <a href="#" data-toggle="modal" data-target="#modal-delete-projeto" data-remove=".projeto-{{ $projeto->id }}" data-url="{{ route('projetos.destroy', $projeto) }}">
+                        <a href="#" data-toggle="modal" data-target="#modal-delete-servico" data-remove=".servico-{{ $servico->id }}" data-url="{{ route('servicos.destroy', $servico) }}">
                             <img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px">
                         </a>
                     </td>
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Modal Exclusão -->
-    <div id="modal-delete-projeto" class="modal-delete modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-delete-projeto" aria-hidden="true">
+    <div id="modal-delete-servico" class="modal-delete modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-delete-servico" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -70,7 +70,7 @@
             </button>
           </div>
           <div class="modal-body">
-            Deletar mesmo deletar o projeto?
+            Deletar mesmo deletar o serviço?
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -82,14 +82,13 @@
         </div>
       </div>
     </div>
-    <!-- Fim Modal Exclusão -->
 
 </section>
 
 <script>
   /* MODAL DE DELEÇÃO */
   /* Passa os dados para o modal de deleção */
-  $('#modal-delete-projeto').on('shown.bs.modal', function (event) {
+  $('#modal-delete-servico').on('shown.bs.modal', function (event) {
     var botaoConfirmacao = $(this).find('#btn-delete');
     var botaoDeletar = $(event.relatedTarget);
     var elementoRemover = $(botaoDeletar.data('remove'));
@@ -104,7 +103,7 @@
             modal.modal('hide');
             elementoRemover.remove();
             $('#resultado').attr('class', 'alert alert-success')
-            $('#resultado').append('Slide deletetado com sucesso');
+            $('#resultado').append('Servico deletetado com sucesso');
 
           } else {
             console.log(data);
