@@ -77,8 +77,6 @@ class ProcessoSeletivoController extends Controller
      */
     public function update(Request $request, ProcessoSeletivo $processo_seletivo)
     {
-        $valida
-
         $processo_seletivo->estado = $request->has('estado') ? true : false;
         $processo_seletivo->descricao = $request->descricao;
         $processo_seletivo->usa_descricao = $request->has('usa_descricao') ? true : false;
@@ -87,8 +85,10 @@ class ProcessoSeletivoController extends Controller
         $processo_seletivo->link_driver = $request->link_driver;
         $processo_seletivo->usa_descricao = $request->has('usa_link_driver') ? true : false;
 
-        if($request->hasFile('')) {
-
+        if($request->hasFile('pdf')) {
+            $processo_seletivo->deletePdf();
+            $processo_seletivo->url_pdf = uniqid() . '.' . $request->pdf->extension();
+            $request->pdf->storeAs('public/processo_seletivo_pdf', $processo_seletivo->url_pdf);
         }
 
         $processo_seletivo->save();
