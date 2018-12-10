@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#">
-    <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="{{ asset('img/layout/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
     <span class="menu-collapsed">   Painel Administrativo</span>
   </a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">

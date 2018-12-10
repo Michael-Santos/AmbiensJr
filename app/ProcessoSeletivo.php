@@ -14,10 +14,9 @@ class ProcessoSeletivo extends Model
      * @return bool
      */
 
-
     public function deletePdf()
     {
-    	if($this->usa_pdf && Storage::disk('local')->exists('public/processo_seletivo_pdf/' . $this->url_pdf)) {
+    	if(Storage::disk('local')->exists('public/processo_seletivo_pdf/' . $this->url_pdf)) {
     		return Storage::disk('local')->delete('public/processo_seletivo_pdf/' . $this->url_pdf);
     	} else {
     		return false;

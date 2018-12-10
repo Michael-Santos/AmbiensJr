@@ -47,7 +47,7 @@ class Slide extends Model
 
     public function imagem()
     {
-    	if($this->url_imagem == NULL || !Storage::disk('local')->exists('public/' . $this->url_imagem)) {
+    	if($this->url_imagem == NULL || !Storage::disk('local')->exists('public/slides/' . $this->url_imagem)) {
     		return '/img/no-logo-image-square.png';
     	} else {
     		return '/storage/slides/' . $this->url_imagem;
