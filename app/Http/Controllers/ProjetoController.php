@@ -79,19 +79,39 @@ class ProjetoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $projeto = Projeto::find($id);        
+        return view('dashboard/projetos/edit')->with("projeto", $projeto);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  App\Project $projeto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Projeto $projeto)
     {
-        //
+        $validatedData = $request->validate([
+            'titulo' => 'required',
+            'descricao' => 'required',
+            'estado' => 'required',
+            'imagem' => 'image'
+        ]);
+
+        $projeto->titulo = $request->titulo;
+        $projeto->descricao = $request->descricao;
+        $projeto->estado = $request->estado;
+
+        if($request->hasFile('imagem')){
+            $projeto->deleteImagem();
+            $projeto->url_imagem = uniqid() . '.' . $request->imagem->extension();
+            $request->imagem->storeAs('public/projetos', $projeto->url_imagem);
+        }
+
+        $projeto->save();
+
+        return redirect()->route('projetos.edit', $projeto)->with('success', 'Processo seletivo editado com sucesso');
     }
 
     /**
