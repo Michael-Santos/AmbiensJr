@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Slide;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class SlideController extends Controller
 {

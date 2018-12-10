@@ -19,6 +19,4 @@ class Membro extends Model
 	public function setor(){
 		return $this->belongsTo('App\Setor', 'setor', 'id');
 	}
-
-
 }

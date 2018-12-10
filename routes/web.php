@@ -149,13 +149,13 @@ Route::singularResourceParameters();
 	    return view('dashboard/galeria_db_editar');
 	});	
 
-//AREA DE PROCESSO SLIDE
+//AREA DE SLIDE
 	Route::resource('admin/slides', 'SlideController');
 
-//AREA DE PROCESSO SELETIVO
-	Route::get('/admin/ps_adm', function () {
-	    return view('dashboard/pseletivo_adm');
-	});
+//AREAD DE PROCESSO SELETIVO 
+	Route::get('admin/processo_seletivo', 'ProcessoSeletivoController@edit')->name('processo.edit');
+
+	Route::patch('admin/processo_seletivo', 'ProcessoSeletivoController@update')->name('processo.update');
 
 //AREA DE USUARIO
 	Route::get('/admin/adm_perfil', function () {

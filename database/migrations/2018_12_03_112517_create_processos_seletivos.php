@@ -15,9 +15,15 @@ class CreateProcessosSeletivos extends Migration
     {
         Schema::create('processos_seletivos', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('ativo');
-            $table->text('descricao');
-            $table->string('link_driver');
+            $table->boolean('estado')->default(false);
+            $table->date('data_final')->nullable();
+            $table->date('hora_final')->nullable();
+            $table->boolean('usa_descricao')->default(false);
+            $table->text('descricao')->nullable();
+            $table->boolean('usa_pdf')->default(false);
+            $table->string('url_pdf')->nullable();
+            $table->boolean('usa_link_driver')->default(false);
+            $table->string('link_driver')->nullable();
             $table->timestamps();
         });
     }
