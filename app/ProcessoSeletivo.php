@@ -9,14 +9,14 @@ class ProcessoSeletivo extends Model
 {
     protected $table = 'processos_seletivos';
 
-
     /**
      * Deletes the pdf file
      * @return bool
      */
 
 
-    public function deletePdf(){
+    public function deletePdf()
+    {
     	if($this->usa_pdf && Storage::disk('local')->exists('public/processo_seletivo_pdf/' . $this->url_pdf)) {
     		return Storage::disk('local')->delete('public/processo_seletivo_pdf/' . $this->url_pdf);
     	} else {
@@ -25,21 +25,26 @@ class ProcessoSeletivo extends Model
     } 
 
     /**
-	* Get the check state for desricao, pdf and link
+	* Get the check state for estado, descricao, pdf and link
 	* @return checked or ""
     */
 
-	public function exibe_descricao()
+	public function exibeEstado()
+	{
+		return $this->estado ? "checked" : "" ;
+	}
+
+	public function exibeDescricao()
 	{
 		return $this->usa_descricao ? "checked" : "" ;
 	}   	
 
-	public function exibe_pdf()
+	public function exibePdf()
 	{
 		return $this->usa_pdf ? "checked" : "" ;
 	}
 
-    public function exibe_link()
+    public function exibeLink()
     {
     	return $this->usa_link_driver ? "checked" : "" ;
     }

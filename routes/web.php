@@ -155,7 +155,7 @@ Route::singularResourceParameters();
 //AREAD DE PROCESSO SELETIVO 
 	Route::get('admin/processo_seletivo', 'ProcessoSeletivoController@edit')->name('processo.edit');
 
-	Route::patch('admin/processo_seletivo', 'ProcessoSeletivoController@update')->name('processo.update');
+	Route::patch('admin/processo_seletivo/{processo_seletivo}', 'ProcessoSeletivoController@update')->name('processo.update');
 
 //AREA DE USUARIO
 	Route::get('/admin/adm_perfil', function () {

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\ProcessoSeletivo;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -58,9 +57,9 @@ class ProcessoSeletivoController extends Controller
      */
     public function edit()
     {
-        $processo_seletivo = DB::table('processos_seletivos')->first();
+        $processo_seletivo = ProcessoSeletivo::first();
 
-        if(!$processo_seletivo){
+        if(empty($processo_seletivo)) {
             $processo_seletivo = new ProcessoSeletivo();
 
             $processo_seletivo->save();
@@ -76,9 +75,25 @@ class ProcessoSeletivoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, ProcessoSeletivo $processo_seletivo)
     {
-        Log::info("Chegou a requisição");
+        $valida
+
+        $processo_seletivo->estado = $request->has('estado') ? true : false;
+        $processo_seletivo->descricao = $request->descricao;
+        $processo_seletivo->usa_descricao = $request->has('usa_descricao') ? true : false;
+        $processo_seletivo->data_final = $request->data_final;
+        $processo_seletivo->hora_final = $request->hora_final;
+        $processo_seletivo->link_driver = $request->link_driver;
+        $processo_seletivo->usa_descricao = $request->has('usa_link_driver') ? true : false;
+
+        if($request->hasFile('')) {
+
+        }
+
+        $processo_seletivo->save();
+
+        return redirect()->route('processo.edit')->with('success', 'Processo seletivo editado com sucesso');
     }
 
     /**
