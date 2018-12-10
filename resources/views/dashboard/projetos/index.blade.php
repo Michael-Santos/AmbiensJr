@@ -3,21 +3,23 @@
 @section('content')
 
 <section id="projetos_db_home">
-    @if(session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-    @endif
-    @if($errors->any())
-      <div class="alert alert-danger">
-        @foreach ($errors->all() as $error)
-          <span>{{ $error }}</span>
-          <br>
-        @endforeach
-      </div>
-    @endif
-
     <div class="container">
+
+        @if(session('success'))
+          <div class="alert alert-success">
+            {{ session('success') }}
+          </div>
+        @endif
+        @if($errors->any())
+          <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+              <span>{{ $error }}</span>
+              <br>
+            @endforeach
+          </div>
+        @endif
+        <div id="resultado">
+        </div>
 
         <h1>Projetos</h1>
         <p class="text-justify">Área destinada à Projetos<br>
@@ -84,4 +86,31 @@
 
 </section>
 
+<script>
+  /* MODAL DE DELEÇÃO */
+  /* Passa os dados para o modal de deleção */
+  $('#modal-delete-projeto').on('shown.bs.modal', function (event) {
+    var botaoConfirmacao = $(this).find('#btn-delete');
+    var botaoDeletar = $(event.relatedTarget);
+    var elementoRemover = $(botaoDeletar.data('remove'));
+    var modal = $(this);
+    var url = botaoDeletar.data('url');
+    var token = $('meta[name=csrf-token]').attr('content');
+
+    botaoConfirmacao.off('click').click(function (event) {
+      $.post(url, { _method: "delete", _token: token })
+        .done(function (data) {
+          if (data.status == 'success'){
+            modal.modal('hide');
+            elementoRemover.remove();
+            $('#resultado').attr('class', 'alert alert-success')
+            $('#resultado').append('Slide deletetado com sucesso');
+
+          } else {
+            console.log(data);
+          }
+        });   
+    });
+  });
+</script>
 @endsection

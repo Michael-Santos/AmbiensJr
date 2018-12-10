@@ -102,6 +102,16 @@ class ProjetoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $projeto = Projeto::find($id);
+
+        if($projeto->delete()) {
+            return response()->json([
+                'status' => 'success',
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+            ]);
+        }
     }
 }
