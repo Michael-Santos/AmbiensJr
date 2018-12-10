@@ -36,6 +36,7 @@
                 <tbody>
                     
                     @foreach($projetos as $projeto)
+                    <tr class="projeto-{{ $projeto->id }}">
                     <td>{{ $projeto->titulo }}</td>
                     
                     <td style="text-align: center;">
@@ -49,21 +50,8 @@
                             <img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px">
                         </a>
                     </td>
-                    @endforeach
-
-                    <td>Projeto 1</td>
-                    
-                    <td style="text-align: center;">
-                        <a href="">
-                            <img src="{{asset ('img/icones/editar.png')}}" style="height: 25px;">
-                        </a>
-                    </td>
-
-                    <td style="text-align: center;">
-                        <a href="#" data-toggle="modal" data-target="#modal-delete-projeto" data-remove=".projeto-1" data-url="">
-                            <img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px">
-                        </a>
-                    </td>                     
+                    </tr>
+                    @endforeach                
                 </tbody>
             </table>
         </div>

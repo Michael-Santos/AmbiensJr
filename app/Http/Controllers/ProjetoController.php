@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Projeto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProjetoController extends Controller
 {
@@ -25,7 +26,7 @@ class ProjetoController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard/projetos/create');
     }
 
     /**
@@ -36,7 +37,27 @@ class ProjetoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'titulo' => 'required',
+            'descricao' => 'required',
+            'estado' => 'required',
+            'imagem' => 'image'
+        ]);
+
+        $projeto = new Projeto();
+
+        $projeto->titulo = $request->titulo;
+        $projeto->descricao = $request->descricao;
+        $projeto->estado = $request->estado;
+
+        if($request->hasFile('imagem')){
+            $projeto->url_imagem = uniqid() . '.' . $request->imagem->extension();
+            $request->imagem->storeAs('public/projetos', $projeto->url_imagem);
+        }
+
+        $projeto->save();
+
+        return redirect()->route('projetos.index')->with('success', 'Processo seletivo cadastrado com sucesso');
     }
 
     /**
