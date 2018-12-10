@@ -122,7 +122,7 @@ Route::singularResourceParameters();
 	});
 
 //AREA DE PROJETOS
-	Route::resource('admin/projetos', 'ProjetoController');
+	Route::resource('/admin/projetos', 'ProjetoController');
 
 //AREA DE GALERIA
 	//galeria_home
@@ -140,13 +140,24 @@ Route::singularResourceParameters();
 	    return view('dashboard/galeria_db_editar');
 	});	
 
+//AREA DE CONTEUDO
+	Route::get('admin/conteudo', 'ConteudoController@index')->name('conteudo.index');
+
+	Route::patch('admin/conteudo/quem_somos', 'ConteudoController@quem_somos')->name('conteudo.update.quem_somos');
+
+	Route::patch('admin/conteudo/missao', 'ConteudoController@missao')->name('conteudo.update.missao');
+
+	Route::patch('admin/conteudo/visao', 'ConteudoController@visao')->name('conteudo.update.visao');
+
+	Route::patch('admin/conteudo/valores', 'ConteudoController@valores')->name('conteudo.update.valores');
+
 //AREA DE SLIDE
 	Route::resource('admin/slides', 'SlideController');
 
 //AREAD DE PROCESSO SELETIVO 
-	Route::get('admin/processo_seletivo', 'ProcessoSeletivoController@edit')->name('processo.edit');
+	Route::get('/admin/processo_seletivo', 'ProcessoSeletivoController@edit')->name('processo.edit');
 
-	Route::patch('admin/processo_seletivo/{processo_seletivo}', 'ProcessoSeletivoController@update')->name('processo.update');
+	Route::patch('/admin/processo_seletivo/{processo_seletivo}', 'ProcessoSeletivoController@update')->name('processo.update');
 
 //AREA DE USUARIO
 	Route::get('/admin/adm_perfil', function () {
