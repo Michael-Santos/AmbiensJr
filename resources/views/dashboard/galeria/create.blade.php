@@ -18,7 +18,7 @@
 
 				<div class="form-group">
 				    <label for="imgs_galeria">Escolha as fotos</label>
-				    <input type="file" class="form-control-file" name="imgs_galeria" id="imgs_galeria" multiple>
+				    <input type="file" class="form-control-file" name="imgs_galeria[]" id="imgs_galeria" multiple>
 				</div>
 			</div>
 

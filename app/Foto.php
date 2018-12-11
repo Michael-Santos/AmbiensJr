@@ -21,6 +21,6 @@ class Foto extends Model
 
     public function Galeria()
     {
-    	return $this->belongsTo('App\Galeria', 'foreign_key');
+    	return $this->belongsTo('App\Galeria', 'galeria', 'id');
     }
 }

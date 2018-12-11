@@ -51,13 +51,16 @@ class GaleriaController extends Controller
 
         foreach ($request->imgs_galeria as $foto) {
         	$nova_foto = new Foto();
-        	$nova_foto->nome = uniqid() . '.' . $foto->extension();
+        	Log::info("Criado objeto de foto");
+            $nova_foto->nome = uniqid() . '.' . $foto->extension();
         	$nova_foto->galeria = $galeria->id;
-        	$foto->save();
-        	$foto->storeAs('public/galeria/' . $galeria_nome, $foto->nome);
+        	$foto->storeAs('public/galeria/' , $nova_foto->nome);
+            Log::info($nova_foto->nome . " salva");
+
+            $nova_foto->save();
         }
 
-        return redirect()->route('galeria.index', $galeria)->with('success', 'Galeria cadastrada com sucesso.');
+        return redirect()->route('galeria.index')->with('success', 'Galeria cadastrada com sucesso.');
     }
 
     /**
