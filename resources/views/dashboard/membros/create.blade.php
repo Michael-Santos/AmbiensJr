@@ -3,7 +3,7 @@
 @section('content')
 
 <section id="cadastrar_curso">
-	<div class="container">
+	<div class="container pt-3">
 		<h1>Cadastrar Membro</h1>
 		<p>Preencha o formulário abaixo e não esqueça de revisar antes de confirmar o cadatro.</p>
 

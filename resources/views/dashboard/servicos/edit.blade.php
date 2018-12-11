@@ -17,7 +17,7 @@
       </div>
     @endif
 
-  <div class="container">
+  <div class="container pt-3">
         <h1>Editar Slide</h1>
         <p>Preencha com os novos dados do servico.</p>
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <section id="membros_index">
-    <div class="container">
+    <div class="container pt-3">
         <h1>Membros</h1>
         <p class="text-justify">Área destinada à edição de membros<br>
         Você pode verificar os membros e editar seus dados ou criar </p><a class="btn btn-secondary" href="{{ route('membros.create') }}">Novo Membro</a>

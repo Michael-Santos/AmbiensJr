@@ -3,7 +3,7 @@
 @section('content')
 
 <section id="cadastrar_galeria">
-	<div class="container">
+	<div class="container pt-3">
 		<h1>Editar Galeria</h1>
 		<form class="form-inline">
 			<div class="form-group mb-3">
