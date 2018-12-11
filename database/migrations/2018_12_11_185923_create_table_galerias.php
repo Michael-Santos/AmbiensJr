@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableRoles extends Migration
+class CreateTableGalerias extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableRoles extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('galerias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 30);
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTableRoles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('galerias');
     }
 }
