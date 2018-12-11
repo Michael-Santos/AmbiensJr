@@ -150,6 +150,8 @@ Route::singularResourceParameters();
 	Route::resource('admin/servicos', 'ServicoController');
 
 //AREAD DE PROCESSO SELETIVO 
+	Route::resource('admin/processo_seletivo', 'ProcessoSeletivoController');
+
 	Route::get('/admin/processo_seletivo', 'ProcessoSeletivoController@edit')->name('processo.edit');
 
 	Route::patch('/admin/processo_seletivo/{processo_seletivo}', 'ProcessoSeletivoController@update')->name('processo.update');

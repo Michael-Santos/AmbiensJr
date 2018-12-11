@@ -14,7 +14,7 @@ class ProcessoSeletivoController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard/processo_seletivo/index');
     }
 
     /**

@@ -17,7 +17,7 @@
         <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-home fa-fw mr-3"></span> 
-                <span class="menu-collapsed">Home</span>
+                <span class="menu-collapsed">Editar Home</span>
             </div>
         </a>
         
@@ -46,26 +46,26 @@
             <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
                 <span class="menu-collapsed">Setores</span>
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+            <a href="{{ route('membros.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
                 <span class="menu-collapsed">Membros</span>
             </a>
         </div>   
 
-        <a href="#" class="bg-dark list-group-item list-group-item-action">
+        <a href="{{ route('projetos.index') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-briefcase mr-3"></span>
                 <span class="menu-collapsed">Projetos</span>
             </div>
         </a>
 
-        <a href="#" class="bg-dark list-group-item list-group-item-action">
+        <a href="{{ route('cursos.index') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-calendar-alt mr-3"></span>
                 <span class="menu-collapsed">Cursos</span>
             </div>
         </a>
         
-        <a href="#" class="bg-dark list-group-item list-group-item-action">
+        <a href="{{ route('galeria.index') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-image fa-fw mr-3"></span>
                 <span class="menu-collapsed">Galeria</span>
