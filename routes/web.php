@@ -88,24 +88,11 @@ Route::singularResourceParameters();
 	    return view('dashboard/home_dash');
 	});
 
-
-
-// Setores e membros
+// AREA DE EQUIPE
 	Route::resource('admin/setores', 'SetorController');
 	Route::resource('admin/membros', 'MembroController');
 
 //AREA DOS CURSOS
-
-	//cursos
-	Route::get('/admin/cursos_home', function () {
-	    return view('dashboard/cursos_db_home');
-	});
-
-	//cursos cadastrar
-	Route::get('/admin/cursos_cadastro', function () {
-	    return view('dashboard/cursos_db_novo');
-	});
-
 	//cursos historico
 	Route::get('/admin/cursos_historico', function () {
 	    return view('dashboard/cursos_db_fechados');
@@ -120,6 +107,8 @@ Route::singularResourceParameters();
 	Route::get('/admin/cursos_lista', function () {
 	    return view('dashboard/cursos_db_presenca');
 	});
+
+	Route::resource('/admin/cursos', 'EventoController');
 
 //AREA DE PROJETOS
 	Route::resource('/admin/projetos', 'ProjetoController');

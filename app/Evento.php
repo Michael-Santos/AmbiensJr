@@ -9,11 +9,18 @@ class Evento extends Model
     protected $fillable = [
         'nome',
         'descricao',
-        'inscricao',
         'data_evento',
         'hora_evento',
-        'data_incricao',
-        'hora_inscricao'
+        'inscricao',
+        'pagamento',
+        'imagem',
+        'data_inicio_inscricao',
+        'hora_inicio_inscricao',
+        'data_fim_inscricao',
+        'hora_fim_inscricao',
+        'numero_vagas',
+        'pagamento_na_hora',
+        'pagamento_antecipado'
     ];
 
     public function usuarios()

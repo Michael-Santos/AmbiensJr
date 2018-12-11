@@ -15,14 +15,25 @@ class CreateTableEventos extends Migration
     {
         Schema::create('eventos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome', 100);
-            $table->longText('descricao');
-            $table->boolean('inscricao');
-            $table->string('imagem')->nullable();
+            $table->string('nome');
+            $table->text('descricao');
             $table->date('data_evento');
             $table->time('hora_evento');
-            $table->date('data_inscricao');
-            $table->time('hora_inscricao');
+            $table->boolean('inscricao')->default(false);
+            $table->boolean('pagamento')->default(false);
+            $table->string('url_imagem')->nullable();
+
+
+            $table->date('data_inicio_inscricao')->nullable();
+            $table->time('hora_inicio_inscricao')->nullable();
+            $table->date('data_fim_inscricao')->nullable();
+            $table->time('hora_fim_inscricao')->nullable();
+            $table->integer('numero_vagas')->default(0);
+
+            $table->boolean('pagamento_na_hora')->default(false);
+            $table->boolean('pagamento_antecipado')->default(false);
+            $table->integer('valor')->nullable();
+
             $table->timestamps();
         });
     }
