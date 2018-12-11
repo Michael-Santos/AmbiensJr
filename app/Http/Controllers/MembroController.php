@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Setor;
+use App\Membro;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,8 @@ class MembroController extends Controller
      */
     public function index()
     {
-        //
+        $data['membros'] = Membro::orderByRaw('id')->paginate(5);
+        return view('dashboard/membros/index', $data);
     }
 
     /**
@@ -25,7 +26,7 @@ class MembroController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard/membros/create');
     }
 
     /**
