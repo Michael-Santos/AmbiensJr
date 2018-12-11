@@ -17,7 +17,7 @@
       </div>
     @endif
 
-	<div class="container">
+	<div class="container  pt-3">
 		<h1>Editar Projeto</h1>
 
 		<form class="border border-light px-1 py-3 rounded" action="{{ route('projetos.update', $projeto) }}" enctype="multipart/form-data" method="post">

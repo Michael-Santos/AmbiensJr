@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="mt-4" id="adm_pseletivo">
-    <div class="container">
+    <div class="container pt-3">
         @if(session('success'))
           <div class="alert alert-success">
             {{ session('success') }}

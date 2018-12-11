@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Galeria;
+use App\Foto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -15,7 +16,8 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        return view('dashboard/galeria/index');
+    	$galeria['galerias'] = Galeria::orderByRaw('id')->paginate(5);
+        return view('dashboard/galeria/index', $galeria);
     }
 
     /**
@@ -36,6 +38,8 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
+    	Log::info($request);
+
         $validatedData = $request->validate([
             'galeria_nome' => 'required',
         ]);
@@ -49,10 +53,11 @@ class GaleriaController extends Controller
         	$nova_foto = new Foto();
         	$nova_foto->nome = uniqid() . '.' . $foto->extension();
         	$nova_foto->galeria = $galeria->id;
+        	$foto->save();
         	$foto->storeAs('public/galeria/' . $galeria_nome, $foto->nome);
         }
 
-        return redirect()->route('galeria.index', $slide)->with('success', 'Galeria cadastrada com sucesso.');
+        return redirect()->route('galeria.index', $galeria)->with('success', 'Galeria cadastrada com sucesso.');
     }
 
     /**
@@ -89,7 +94,7 @@ class GaleriaController extends Controller
     {
     	$galeria = Galeria::find($id);
 
-        return redirect()->route('galeria.edit', $slide)->with('success', 'Galeria alterada com sucesso.');
+        return redirect()->route('galeria.edit', $galeria)->with('success', 'Galeria alterada com sucesso.');
     }
 
     /**

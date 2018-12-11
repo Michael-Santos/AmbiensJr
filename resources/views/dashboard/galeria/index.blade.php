@@ -3,7 +3,7 @@
 @section('content')
 
 <section id="galeria_index">
-    <div class="container">
+    <div class="container  pt-3">
         <h1>Galeria</h1>
         <p class="text-justify">Área destinada à Galeria<br>
         Nesta área você pode: <a class="btn btn-outline-primary btn-sm" href="{{ route('galeria.create') }}">Adicionar uma Galeria</a><br>

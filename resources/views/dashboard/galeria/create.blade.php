@@ -3,11 +3,12 @@
 @section('content')
 
 <section id="cadastrar_galeria">
-	<div class="container">
+	<div class="container pt-3">
 		<h1>Cadastrar Galeria</h1>
 		<p>Preencha o formulário abaixo e não esqueça de revisar antes de confirmar o cadatro.</p>
 
 		<form class="border border-light px-1 py-3 rounded" action="{{ route('galeria.store') }}" enctype="multipart/form-data" method="post">
+			@csrf
 			<h3>Informações</h3>
 			<div class="border px-3 py-3 my-2 rounded">
 				<div class="form-group">
