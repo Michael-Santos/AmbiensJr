@@ -143,7 +143,7 @@ Route::singularResourceParameters();
 	});
 
 //AREA DE GALERIA
-	Route::patch('/admin/galeria', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
-	
+	Route::patch('/admin/galeria/{galeria}', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
+
 	Route::resource('admin/galeria', 'GaleriaController');
 
