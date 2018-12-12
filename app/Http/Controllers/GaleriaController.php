@@ -6,6 +6,7 @@ use App\Galeria;
 use App\Foto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class GaleriaController extends Controller
 {
@@ -99,8 +100,13 @@ class GaleriaController extends Controller
     	$validatedData = $request->validate([
             'galeria_nome' => 'required',
         ]);
-        $galeria->nome = $request->galeria_nome;
-        $galeria->save();
+
+        if($galeria->nome != $request->galeria_nome)
+        {
+        	Storage::move('public/galeria/'.$galeria->nome, 'public/galeria/'.$request->galeria_nome);
+        	$galeria->nome = $request->galeria_nome;
+        	$galeria->save();
+        }
 
         return redirect()->route('galeria.edit', $galeria)->with('success', 'Galeria alterada com sucesso.');
     }

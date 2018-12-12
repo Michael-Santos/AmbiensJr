@@ -160,5 +160,5 @@ Route::singularResourceParameters();
 //AREA DE GALERIA
 	Route::resource('admin/galeria', 'GaleriaController');
 
-	Route::post('/admin/galeria', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
+	Route::patch('/admin/galeria', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
 

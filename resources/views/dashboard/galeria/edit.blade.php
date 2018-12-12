@@ -16,6 +16,8 @@
 		</form>
 
         <form class="form border px-3 pb-3 rounded" action="{{ route('galeria.updatefotos', $galeria) }}" enctype="multipart/form-data" method="post">
+            @csrf
+            @method('PATCH')
     		<div class="py-3">
     			<p>Adicionar mais fotos a galeria</p>
     			<input type="file" class="form-control-file" id="imgs_galeria[]" multiple>
