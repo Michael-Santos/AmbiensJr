@@ -3,7 +3,7 @@
 @section('content')
 
 <section id="cursos_historico">
-    <div class="container">
+    <div class="container pt-3">
         <h1>Cursos Realizados</h1>
         <p class="text-justify"> Tabela de cursos já concluídos e seus dados</p>
         <div class="container">
@@ -22,16 +22,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($cursos as $curso)
                         <tr>
-                            <td>Curso 1</td>
-                            <td>XX/XX/XX</td>
-                            <td>50</td>
-                            <td>45</td>
-                            <td>42</td>
-                            <td>3</td>
-                            <td>R$ 20,00</td>
-                            <td>R$ 900,00</td>
+                            <td>{{$curso->nome}}</td>
+                            <td>{{$curso->data_evento}}</td>
+
+                            @if($curso->numero_vagas == 0)
+                                <td>Sem inscrição</td>
+                                <td>Sem inscrição</td>
+                                <td>Sem inscrição</td>
+                                <td>Sem inscrição</td>
+                            @else
+                                <td>{{$curso->numero_vagas}}</td>
+                                <td>{{$curso->incritos}}</td>
+                                <td>{{$curso->incritos}}</td>
+                                <td>{{$curso->incritos}}</td>
+                            @endif
+
+                            @if($curso->pagamento == false)
+                                <td>Gratuito</td>
+                                <td>Nenhum</td>
+                            @else
+                                <td>{{$curso->valor}}</td>
+                                <td>{{$curso->valor * $curso->incritos}}</td>
+                            @endif
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

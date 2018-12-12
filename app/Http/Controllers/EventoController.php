@@ -65,7 +65,8 @@ class EventoController extends Controller
 
         /* Tratar iamgem */
         if($request->hasFile('imagem')) {
-
+            $nome_img = uniqid() . '.' . $request->imagem->extension();
+            $foto->storeAs('public/eventos/' . $nome_img);
         }
     
         if($request->has('inscricao')) {
@@ -109,7 +110,19 @@ class EventoController extends Controller
 
     public function lista_fechados(){
         $cursos = Evento::where('finalizado', '1')->get();
-        return view('dashboard/cursos/lista_abertos')->with("cursos", $cursos);
+        return view('dashboard/cursos/lista_fechados')->with("cursos", $cursos);
+    }
+
+    public function lista_presenca($id){
+        $curso = Evento::find($id);
+        return view('dashboard/cursos/lista_presenca')->with("cursos", $curso);
+    }
+
+    public function concluir($id){
+        $curso = Evento::find($id);
+        $curso->finalizado = true;
+        $curso->save();
+        return view('dashboard/cursos/lista_fechados')->with('sucess', 'Curso conluído');
     }
 
     /**
@@ -144,6 +157,16 @@ class EventoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $evento = Evento::find($id);
+
+        if($evento->delete()) {
+            return response()->json([
+                'status' => 'success',
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+            ]);
+        }
     }
 }

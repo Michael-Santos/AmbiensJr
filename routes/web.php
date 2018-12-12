@@ -98,7 +98,9 @@ Route::singularResourceParameters();
 
 	Route::get('admin/cursos/lista_fechados/', 'EventoController@lista_fechados')->name('cursos.lista_fechados');
 
-	Route::get('admin/cursos/lista_presenca/', 'EventoController@lista_presenca')->name('cursos.lista_presenca');
+	Route::get('admin/cursos/lista_presenca/{id}', 'EventoController@lista_presenca')->name('cursos.lista_presenca');
+
+	Route::get('admin/cursos/lista_fechados/{id}', 'EventoController@concluir')->name('cursos.concluir');
 
 	Route::resource('admin/cursos', 'EventoController');
 
