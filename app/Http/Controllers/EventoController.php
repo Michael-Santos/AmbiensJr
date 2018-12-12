@@ -122,7 +122,8 @@ class EventoController extends Controller
         $curso = Evento::find($id);
         $curso->finalizado = true;
         $curso->save();
-        return view('dashboard/cursos/lista_fechados')->with('sucess', 'Curso conluído');
+        $cursos = Evento::where('finalizado', '1')->get();
+        return view('dashboard/cursos/lista_fechados')->with("cursos", $cursos);
     }
 
     /**
