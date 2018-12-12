@@ -51,11 +51,9 @@ class GaleriaController extends Controller
 
         foreach ($request->imgs_galeria as $foto) {
         	$nova_foto = new Foto();
-        	Log::info("Criado objeto de foto");
             $nova_foto->nome = uniqid() . '.' . $foto->extension();
         	$nova_foto->galeria = $galeria->id;
-        	$foto->storeAs('public/galeria/' , $nova_foto->nome);
-            Log::info($nova_foto->nome . " salva");
+        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
 
             $nova_foto->save();
         }
@@ -82,8 +80,9 @@ class GaleriaController extends Controller
      */
     public function edit($id)
     {
-    	$galeria = Galeria::find($id);   
-        return view('dashboard/galeria/edit')->with("galeria", $galeria);
+    	$galeria = Galeria::find($id); 
+    	$fotos = Galeria::find($id)->fotos;
+        return view('dashboard/galeria/edit')->with("galeria", $galeria)->with("fotos", $fotos);
     }
 
     /**
@@ -96,9 +95,41 @@ class GaleriaController extends Controller
     public function update(Request $request, $id)
     {
     	$galeria = Galeria::find($id);
+    	$mode = 1;
+    	if($mode == 1){
+	    	$validatedData = $request->validate([
+	            'galeria_nome' => 'required',
+	        ]);
+	        $galeria->nome = $request->galeria_nome;
+	        $galeria->save();
+	    }
+
+	    if($mode ==2){
+	        foreach ($request->imgs_galeria as $foto) {
+	        	$nova_foto = new Foto();
+	            $nova_foto->nome = uniqid() . '.' . $foto->extension();
+	        	$nova_foto->galeria = $galeria->id;
+	        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
+
+	            $nova_foto->save();
+	        }
+	    }
 
         return redirect()->route('galeria.edit', $galeria)->with('success', 'Galeria alterada com sucesso.');
     }
+
+    public function updatefotos(Request $request, Galeria $galeria)
+    {
+    	foreach ($request->imgs_galeria as $foto) {
+        	$nova_foto = new Foto();
+            $nova_foto->nome = uniqid() . '.' . $foto->extension();
+        	$nova_foto->galeria = $galeria->id;
+        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
+
+            $nova_foto->save();
+        }
+    }
+
 
     /**
      * Remove the specified resource from storage.
