@@ -5,7 +5,7 @@
 <section id="cadastrar_galeria">
 	<div class="container pt-3">
 		<h1>Editar Galeria</h1>
-		<form class="form-inline" action="{{ route('galeria.update', $galeria->id) }}" enctype="multipart/form-data" method="post">
+		<form class="form-inline" action="{{ route('galeria.update', $galeria) }}" enctype="multipart/form-data" method="post">
             @csrf
             @method('PATCH')
 			<div class="form-group mb-3">

@@ -116,7 +116,7 @@ class GaleriaController extends Controller
         return redirect()->route('galeria.edit', $galeria)->with('success', 'Galeria alterada com sucesso.');
     }
 
-    public function updatefotos(Request $request, $galeria)
+    public function updatefotos(Request $request, Galeria $galeria)
     {
     	foreach ($request->imgs_galeria as $foto) {
         	$nova_foto = new Foto();
