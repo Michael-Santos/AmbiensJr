@@ -10,9 +10,9 @@
             Escolha uma das seguintes opções ou veja a lista de cursos abaixo.<br></p>
 
             <div class="container px-0">
-                <a class="btn btn-primary" href="{{ url('admin/cursos_cadastro') }}">Criar Curso</a>
-                <a class="btn btn-primary" href="{{ url('admin/cursos_abertos') }}">Curso Abertos</a>
-                <a class="btn btn-primary" href="{{ url('admin/cursos_historico') }}">Curso Finalizados</a>
+                <a class="btn btn-primary" href="{{ route('cursos.create') }}">Criar Curso</a>
+                <a class="btn btn-primary" href="{{ route('cursos.lista_abertos') }}">Curso Abertos</a>
+                <a class="btn btn-primary" href="{{ route('cursos.lista_fechados') }}">Curso Finalizados</a>
             </div>            
         </div>
 
@@ -29,20 +29,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <a href="{{ url('admin/cursos_abertos') }}">
-                            <tr>
-                                <td>Curso 1</td>
-                                <td>XX/XX/XX</td>
-                                <td>Sim</td>
-                                <td>Sim</td>
-                            </tr>
-                        </a>
+                        @foreach($abertos as $aberto)
                         <tr>
-                            <td>Curso 2</td>
-                            <td>XX/XX/XX</td>
+                            <td>{{$aberto->nome}}</td>
+                            <td>{{$aberto->data_evento}}</td>
+
+                            @if($aberto->inscricao == true)
+                            <td>Sim</td>
+                            @elseif($aberto->inscricao == false)
                             <td>Não</td>
+                            @endif
+
+                            @if($aberto->pagamento == true)
+                            <td>Sim</td>
+                            @elseif($aberto->pagamento == false)
                             <td>Não</td>
+                            @endif
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -61,18 +65,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($fechados as $fechado)
                         <tr>
-                            <td>Curso 1</td>
-                            <td>XX/XX/XX</td>
+                            <td>{{$fechado->nome}}</td>
+                            <td>{{$fechado->data_evento}}</td>
+
+                            @if($fechado->inscricao == true)
                             <td>Sim</td>
+                            @elseif($fechado->inscricao == false)
+                            <td>Não</td>
+                            @endif
+
+                            @if($fechado->pagamento == true)
                             <td>Sim</td>
-                        </tr>
-                        <tr>
-                            <td>Curso 2</td>
-                            <td>XX/XX/XX</td>
+                            @elseif($fechado->pagamento == false)
                             <td>Não</td>
-                            <td>Não</td>
+                            @endif
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

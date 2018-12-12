@@ -15,7 +15,9 @@ class EventoController extends Controller
      */
     public function index()
     {
-        return view('dashboard/cursos/index');
+        $abertos = Evento::where('finalizado', '0')->orderby('data_evento')->get();
+        $fechados = Evento::where('finalizado', '1')->orderby('data_evento')->get();
+        return view('dashboard/cursos/index')->with('abertos', $abertos)->with('fechados', $fechados);
     }
 
     /**
@@ -97,7 +99,17 @@ class EventoController extends Controller
      */
     public function show($id)
     {
-        //
+       
+    }
+
+    public function lista_abertos(){
+        $cursos = Evento::where('finalizado', '0')->get();
+        return view('dashboard/cursos/lista_abertos')->with("cursos", $cursos);
+    }
+
+    public function lista_fechados(){
+        $cursos = Evento::where('finalizado', '1')->get();
+        return view('dashboard/cursos/lista_abertos')->with("cursos", $cursos);
     }
 
     /**
@@ -108,7 +120,8 @@ class EventoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $curso = Evento::find($id);
+        return view('dashboard/cursos/edit')->with("curso", $curso);
     }
 
     /**

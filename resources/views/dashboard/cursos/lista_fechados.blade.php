@@ -32,16 +32,6 @@
                             <td>R$ 20,00</td>
                             <td>R$ 900,00</td>
                         </tr>
-                        <tr>
-                            <td>Curso 2</td>
-                            <td>XX/XX/XX</td>
-                            <td>30</td>
-                            <td>33</td>
-                            <td>28</td>
-                            <td>5</td>
-                            <td>R$ 0,00</td>
-                            <td>R$ 0,00</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

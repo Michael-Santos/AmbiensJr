@@ -23,28 +23,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($cursos as $curso)
                         <tr>
-                            <td>Curso 1aaaaaaaaaaaaaaaaaaa</td>
-                            <td>XX/XX/XX</td>
-                            <td>50</td>
-                            <td>45</td>
-                            <td>R$ 20,00</td>
+                            <td>{{$curso->nome}}</td>
+                            <td>{{$curso->data_evento}}</td>
+                            @if($curso->numero_vagas == 0)
+                            <td>Sem inscrição</td>
+                            @else
+                            <td>{{$curso->numero_vagas}}</td>
+                            @endif
+                            <td>{{$curso->}}</td>
+                            <td>{{$curso->}}</td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/editar.png')}}" style="height: 25px;"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/lista.png')}}" style="height: 25px"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
                         </tr>
-                        <tr>
-                            <td>Curso 2</td>
-                            <td>XX/XX/XX</td>
-                            <td>30</td>
-                            <td>33</td>
-                            <td>R$ 0,00</td>
-                            <td style="text-align: center;"><img src="{{asset ('img/icones/editar.png')}}" style="height: 25px"></td>
-                            <td style="text-align: center;"><img src="{{asset ('img/icones/lista.png')}}" style="height: 25px"></td>
-                            <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
-                            <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -93,22 +93,14 @@ Route::singularResourceParameters();
 	Route::resource('admin/membros', 'MembroController');
 
 //AREA DOS CURSOS
-	//cursos historico
-	Route::get('/admin/cursos_historico', function () {
-	    return view('dashboard/cursos_db_fechados');
-	});
 
-	//cursos em andamento
-	Route::get('/admin/cursos_abertos', function () {
-	    return view('dashboard/cursos_db_abertos');
-	});
+	Route::get('admin/cursos/lista_abertos/', 'EventoController@lista_abertos')->name('cursos.lista_abertos');
 
-	//lista de presenca
-	Route::get('/admin/cursos_lista', function () {
-	    return view('dashboard/cursos_db_presenca');
-	});
+	Route::get('admin/cursos/lista_fechados/', 'EventoController@lista_fechados')->name('cursos.lista_fechados');
 
-	Route::resource('/admin/cursos', 'EventoController');
+	Route::get('admin/cursos/lista_presenca/', 'EventoController@lista_presenca')->name('cursos.lista_presenca');
+
+	Route::resource('admin/cursos', 'EventoController');
 
 //AREA DE PROJETOS
 	Route::resource('/admin/projetos', 'ProjetoController');
