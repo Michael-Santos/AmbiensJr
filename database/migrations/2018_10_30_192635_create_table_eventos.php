@@ -34,6 +34,8 @@ class CreateTableEventos extends Migration
             $table->boolean('pagamento_antecipado')->default(false);
             $table->integer('valor')->nullable();
 
+            $table->boolean('finalizado')->default(0);
+
             $table->timestamps();
         });
     }
