@@ -95,30 +95,17 @@ class GaleriaController extends Controller
     public function update(Request $request, $id)
     {
     	$galeria = Galeria::find($id);
-    	$mode = 1;
-    	if($mode == 1){
-	    	$validatedData = $request->validate([
-	            'galeria_nome' => 'required',
-	        ]);
-	        $galeria->nome = $request->galeria_nome;
-	        $galeria->save();
-	    }
 
-	    if($mode ==2){
-	        foreach ($request->imgs_galeria as $foto) {
-	        	$nova_foto = new Foto();
-	            $nova_foto->nome = uniqid() . '.' . $foto->extension();
-	        	$nova_foto->galeria = $galeria->id;
-	        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
-
-	            $nova_foto->save();
-	        }
-	    }
+    	$validatedData = $request->validate([
+            'galeria_nome' => 'required',
+        ]);
+        $galeria->nome = $request->galeria_nome;
+        $galeria->save();
 
         return redirect()->route('galeria.edit', $galeria)->with('success', 'Galeria alterada com sucesso.');
     }
 
-    public function updatefotos(Request $request, Galeria $galeria)
+    public function updatefotos(Request $request, $galeria)
     {
     	foreach ($request->imgs_galeria as $foto) {
         	$nova_foto = new Foto();
@@ -128,6 +115,8 @@ class GaleriaController extends Controller
 
             $nova_foto->save();
         }
+
+        return redirect()->route('galeria.edit', $galeria)->with('success', 'Fotos adicionadas com sucesso.');
     }
 
 

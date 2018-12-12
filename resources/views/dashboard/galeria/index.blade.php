@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{$galeria->nome}}</td>
                         <td style="text-align: center;">
-                            <a href="{{ route('galeria.edit', $galeria->id) }}">
+                            <a href="{{ route('galeria.edit', $galeria) }}">
                                 <img src="{{asset ('img/icones/editar.png')}}" style="height: 25px;">
                             </a>
                         </td>

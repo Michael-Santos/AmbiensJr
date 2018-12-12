@@ -5,7 +5,7 @@
 <section id="cadastrar_galeria">
 	<div class="container pt-3">
 		<h1>Editar Galeria</h1>
-		<form class="form-inline" action="{{ route('galeria.update', $galeria) }}" enctype="multipart/form-data" method="post">
+		<form class="form-inline" action="{{ route('galeria.update', $galeria->id) }}" enctype="multipart/form-data" method="post">
             @csrf
             @method('PATCH')
 			<div class="form-group mb-3">
@@ -15,7 +15,7 @@
 			</div>
 		</form>
 
-        <form class="form border px-3 pb-3 rounded" action="{{ route('galeria.update', $galeria) }}" enctype="multipart/form-data" method="post">
+        <form class="form border px-3 pb-3 rounded" action="{{ route('galeria.updatefotos', $galeria) }}" enctype="multipart/form-data" method="post">
     		<div class="py-3">
     			<p>Adicionar mais fotos a galeria</p>
     			<input type="file" class="form-control-file" id="imgs_galeria[]" multiple>
@@ -31,7 +31,6 @@
                     <thead>
                         <tr>
                             <th scope="col">Foto</th>
-                            <th scope="col">Nome</th>
                             <th scope="col">Visualizar</th>
                             <th scope="col">Excluir</th>
                         </tr>
@@ -41,7 +40,6 @@
                         <tr>
                             
                             <td style="text-align: center;"><img src="{{asset ('img/placeholders/Tucano1.png')}}" style="height: 15%"></td>
-                            <td> {{$foto->nome}} </td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/visualizar.svg')}}" style="height: 25px"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
 

@@ -143,9 +143,6 @@ Route::singularResourceParameters();
 //AREA DE SLIDE
 	Route::resource('admin/slides', 'SlideController');
 
-//AREA DE GALERIA
-	Route::resource('admin/galeria', 'GaleriaController');
-
 //AREA DE SERVIÇO
 	Route::resource('admin/servicos', 'ServicoController');
 
@@ -160,5 +157,8 @@ Route::singularResourceParameters();
 	Route::get('/admin/adm_perfil', function () {
 	    return view('dashboard/adm_perfil');
 	});
+//AREA DE GALERIA
+	Route::resource('admin/galeria', 'GaleriaController');
 
+	Route::post('/admin/galeria', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
 
