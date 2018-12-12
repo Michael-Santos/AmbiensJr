@@ -20,7 +20,7 @@
             @method('PATCH')
     		<div class="py-3">
     			<p>Adicionar mais fotos a galeria</p>
-    			<input type="file" class="form-control-file" id="imgs_galeria[]" multiple>
+    			<input type="file" class="form-control-file" name="imgs_galeria[]" id="imgs_galeria[]" multiple>
     		</div>
             <button type="submit" class="btn btn-primary">Fazer Upload das fotos</button>
         </form>
@@ -40,10 +40,17 @@
                     <tbody>
                         @foreach($fotos as $foto)
                         <tr>
-                            
-                            <td style="text-align: center;"><img src="{{asset ('img/placeholders/Tucano1.png')}}" style="height: 15%"></td>
-                            <td style="text-align: center;"><img src="{{asset ('img/icones/visualizar.svg')}}" style="height: 25px"></td>
-                            <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
+                            <td style="text-align: center;"><img src="{{asset ('storage/galeria/' . $galeria->nome . '/' . $foto->nome)}}" style="max-height: 30px"></td>
+                            <td style="text-align: center;">
+                                <a href="#" class="thumbnail"  data-toggle="modal" data-target="#modal-visualizar-foto" data-url-imagem="{{ 'storage/galeria/' . $galeria->nome . '/' . $foto->nome }}">
+                                    <img src="{{asset ('img/icones/visualizar.svg')}}" style="height: 40px;">
+                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <a href="#" data-toggle="modal" data-target="#modal-delete-galeria" data-remove=".galeria-{{ $galeria->id }}" data-url="{{ route('galeria.destroy', $galeria) }}">
+                                    <img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px">
+                                </a>
+                            </td> 
 
                         </tr>
                         @endforeach
@@ -54,6 +61,86 @@
         </div>
 
 	</div>
+
+    <!-- Modal Visualização -->
+    <div class="modal fade" id="modal-visualizar-galeria" tabindex="-1" role="dialog" aria-labelledby="modal-visualizar-galeria" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 90%"role="document">
+            <div class="modal-dialog" style="display:table;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="image-gallery-title">
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <img id="imagem-galeria" src="" style="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Modal Visualização -->
+
+    <!-- Modal Exclusão -->
+    <div id="modal-delete-foto" class="modal-delete modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-delete-foto" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-delete-foto">Confirmação para deletar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Deletar mesmo a foto?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button class="btn btn-delete" id="btn-delete" data-url="">
+              <span class="mr-1">Deletar</span>
+              <i class="icon fas fa-lg fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fim Modal Exclusão -->
 </section>
+
+<script>
+    /* Ao exibir o modal de visualização*/
+    /* Passa os dados para o modal de visualização */
+    $('#modal-visualizar-foto').on('shown.bs.modal', function (event) {
+        var url_imagem = $(event.relatedTarget).data('url-imagem');
+        $('#imagem-foto').attr('src', url_imagem);
+    });
+
+    /* MODAL DE DELEÇÃO */
+    /* Passa os dados para o modal de deleção */
+    $('#modal-delete-foto').on('shown.bs.modal', function (event) {
+        var botaoConfirmacao = $(this).find('#btn-delete');
+        var botaoDeletar = $(event.relatedTarget);
+        var elementoRemover = $(botaoDeletar.data('remove'));
+        var modal = $(this);
+        var url = botaoDeletar.data('url');
+        var token = $('meta[name=csrf-token]').attr('content');
+
+        botaoConfirmacao.off('click').click(function (event) {
+            $.post(url, { _method: "delete", _token: token })
+                .done(function (data) {
+                    if (data.status == 'success'){
+                        modal.modal('hide');
+                        elementoRemover.remove();
+                        $('#resultado').attr('class', 'alert alert-success')
+                        $('#resultado').append('Slide deletetado com sucesso');
+
+                    } else {
+                        console.log(data);
+                    }
+                });     
+        });
+    });
+
+</script>
 
 @endsection

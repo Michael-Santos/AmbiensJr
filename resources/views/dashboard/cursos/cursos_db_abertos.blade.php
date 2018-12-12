@@ -19,7 +19,7 @@
                             <th scope="col" style="text-align: center;">Editar</th>
                             <th scope="col" style="text-align: center;">Lista de Presença</th>
                             <th scope="col" style="text-align: center;">Excluir</th>
-
+                            <th scope="col" style="text-align: center;">Concluir</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +32,7 @@
                             <td style="text-align: center;"><img src="{{asset ('img/icones/editar.png')}}" style="height: 25px;"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/lista.png')}}" style="height: 25px"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
+                            <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
                         </tr>
                         <tr>
                             <td>Curso 2</td>
@@ -41,6 +42,7 @@
                             <td>R$ 0,00</td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/editar.png')}}" style="height: 25px"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/lista.png')}}" style="height: 25px"></td>
+                            <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
                             <td style="text-align: center;"><img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px"></td>
                         </tr>
                     </tbody>

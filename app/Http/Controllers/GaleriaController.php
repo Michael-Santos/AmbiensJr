@@ -7,6 +7,7 @@ use App\Foto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class GaleriaController extends Controller
 {
@@ -50,14 +51,18 @@ class GaleriaController extends Controller
 
         $galeria->save();
 
-        foreach ($request->imgs_galeria as $foto) {
-        	$nova_foto = new Foto();
-            $nova_foto->nome = uniqid() . '.' . $foto->extension();
-        	$nova_foto->galeria = $galeria->id;
-        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
+        if(!is_null($request->imgs_galeria)){
+	        foreach ($request->imgs_galeria as $foto) {
+	        	$nova_foto = new Foto();
+	            $nova_foto->nome = uniqid() . '.' . $foto->extension();
+	        	$nova_foto->galeria = $galeria->id;
+	        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
 
-            $nova_foto->save();
-        }
+	            $nova_foto->save();
+	        }
+	    }else{
+	    	Storage::disk('local')->makeDirectory('public/galeria/' . $galeria->nome);
+	    }
 
         return redirect()->route('galeria.index')->with('success', 'Galeria cadastrada com sucesso.');
     }
@@ -126,6 +131,7 @@ class GaleriaController extends Controller
     }
 
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -137,6 +143,7 @@ class GaleriaController extends Controller
         $galeria = Galeria::find($id);
 
         if($galeria->delete()) {
+        	Storage::deleteDirectory('public/galeria/' . $galeria->nome);
             return response()->json([
                 'status' => 'success',
             ]);

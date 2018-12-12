@@ -113,22 +113,6 @@ Route::singularResourceParameters();
 //AREA DE PROJETOS
 	Route::resource('/admin/projetos', 'ProjetoController');
 
-//AREA DE GALERIA
-	//galeria_home
-	Route::get('/admin/galeria_home', function () {
-	    return view('dashboard/galeria_db_home');
-	});	
-
-	//galeria_cadastrar
-	Route::get('/admin/galeria_cadastro', function () {
-	    return view('dashboard/galeria_db_novo');
-	});	
-
-	//galeria_cadastrar
-	Route::get('/admin/galeria_editar', function () {
-	    return view('dashboard/galeria_db_editar');
-	});	
-
 //AREA DE CONTEUDO
 	Route::get('admin/conteudo', 'ConteudoController@index')->name('conteudo.index');
 
@@ -157,8 +141,9 @@ Route::singularResourceParameters();
 	Route::get('/admin/adm_perfil', function () {
 	    return view('dashboard/adm_perfil');
 	});
-//AREA DE GALERIA
-	Route::resource('admin/galeria', 'GaleriaController');
 
+//AREA DE GALERIA
 	Route::patch('/admin/galeria', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
+	
+	Route::resource('admin/galeria', 'GaleriaController');
 
