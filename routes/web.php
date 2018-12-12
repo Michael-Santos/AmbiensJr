@@ -144,6 +144,7 @@ Route::singularResourceParameters();
 
 //AREA DE GALERIA
 	Route::patch('/admin/galeria/{galeria}', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
+	Route::get('/admin/galeria/{galeria}/{foto}', 'GaleriaController@deletefoto')->name('galeria.deletefoto');
 
 	Route::resource('admin/galeria', 'GaleriaController');
 

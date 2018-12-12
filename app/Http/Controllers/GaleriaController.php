@@ -118,18 +118,30 @@ class GaleriaController extends Controller
 
     public function updatefotos(Request $request, Galeria $galeria)
     {
-    	foreach ($request->imgs_galeria as $foto) {
-        	$nova_foto = new Foto();
-            $nova_foto->nome = uniqid() . '.' . $foto->extension();
-        	$nova_foto->galeria = $galeria->id;
-        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
+    	if($galeria->nome != $request->galeria_nome)
+        {
+	    	foreach ($request->imgs_galeria as $foto) {
+	        	$nova_foto = new Foto();
+	            $nova_foto->nome = uniqid() . '.' . $foto->extension();
+	        	$nova_foto->galeria = $galeria->id;
+	        	$foto->storeAs('public/galeria/' . $galeria->nome, $nova_foto->nome);
 
-            $nova_foto->save();
-        }
+	            $nova_foto->save();
+	        }
+    	}
 
         return redirect()->route('galeria.edit', $galeria)->with('success', 'Fotos adicionadas com sucesso.');
     }
 
+    public function deletefoto(Request $request, $galeria, $foto)
+    {
+    	$remover = Foto::find($foto);
+    	Log::info($remover);
+    	Storage::delete('public/galeria/' . $galeria . '/' . $remover->nome);
+    	$remover->delete();
+
+    	return redirect()->route('galeria.edit', $galeria)->with('success', 'Foto removida com sucesso.');
+    }
 
 
     /**

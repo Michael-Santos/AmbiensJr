@@ -33,21 +33,19 @@
                     <thead>
                         <tr>
                             <th scope="col">Foto</th>
-                            <th scope="col">Visualizar</th>
                             <th scope="col">Excluir</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($fotos as $foto)
                         <tr>
-                            <td style="text-align: center;"><img src="{{asset ('storage/galeria/' . $galeria->nome . '/' . $foto->nome)}}" style="max-height: 30px"></td>
                             <td style="text-align: center;">
                                 <a href="#" class="thumbnail"  data-toggle="modal" data-target="#modal-visualizar-foto" data-url-imagem="{{ 'storage/galeria/' . $galeria->nome . '/' . $foto->nome }}">
-                                    <img src="{{asset ('img/icones/visualizar.svg')}}" style="height: 40px;">
+                                    <img src="{{asset ('storage/galeria/' . $galeria->nome . '/' . $foto->nome)}}" style="max-height: 30px">
                                 </a>
                             </td>
-                            <td style="text-align: center;">
-                                <a href="#" data-toggle="modal" data-target="#modal-delete-galeria" data-remove=".galeria-{{ $galeria->id }}" data-url="{{ route('galeria.destroy', $galeria) }}">
+                            <td style="vertical-align: center;">
+                                <a href="#" data-toggle="modal" data-target="#modal-delete-galeria" data-remove=".foto-{{ $foto->id }}" data-url="{{ route('galeria.deletefoto', $galeria->nome, foto->id) }}">
                                     <img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px">
                                 </a>
                             </td> 
@@ -63,7 +61,7 @@
 	</div>
 
     <!-- Modal Visualização -->
-    <div class="modal fade" id="modal-visualizar-galeria" tabindex="-1" role="dialog" aria-labelledby="modal-visualizar-galeria" aria-hidden="true">
+    <div class="modal fade" id="modal-visualizar-foto" tabindex="-1" role="dialog" aria-labelledby="modal-visualizar-foto" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 90%"role="document">
             <div class="modal-dialog" style="display:table;">
                 <div class="modal-content">
@@ -73,7 +71,7 @@
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <img id="imagem-galeria" src="" style="">
+                        <img id="imagem-foto" src="" style="">
                     </div>
                 </div>
             </div>
