@@ -227,7 +227,7 @@ class EventoController extends Controller
 
         $evento->save();
 
-        return redirect()->route('eventos.index', $evento)->with('success', 'Curso cadastrado com sucesso.');
+        return redirect()->route('eventos.lista_abertos', $evento)->with('success', 'Curso cadastrado com sucesso.');
     }
 
     /**

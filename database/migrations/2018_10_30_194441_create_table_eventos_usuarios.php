@@ -17,6 +17,7 @@ class CreateTableEventosUsuarios extends Migration
             $table->increments('id');
             $table->unsignedInteger('usuario_id');
             $table->unsignedInteger('evento_id');
+            $table->boolean('presenca')->default(false);
             $table->timestamps();
 
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onupdate('cascade');
