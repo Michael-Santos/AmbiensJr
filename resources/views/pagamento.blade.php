@@ -1,20 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-	<script type="text/javascript" src="{{ PagSeguro::getUrl()['javascript'] }}"></script>		
 
-	<section>
-		<input type="text" value="" id="senderHash" name="valor">
-	</section>
+	<form method="post" action="{{ route('pagar') }}">
+		@csrf
+		<input type="hidden" id="tokenPagSeguro" name="tokenPagSeguro">
+		<input type="submmit" name="">
+	</form>
 
+	<p>SenderHash:<input type ="text" id="senderHash" size="80" disabled><button id="getSenderHash">getSenderHash</button></p><hr>
 
-<script>
-    PagSeguroDirectPayment.setSessionId('{{ PagSeguro::startSession() }}'); 
+    <script type="text/javascript" src="/pagseguro/javascript"></script>
+    <script type="text/javascript">
 
-
-    $(document).ready(function () {
-    	console.log(PagSeguroDirectPayment.getSenderHash()); 
-    });
+	$("#getSenderHash").click(function(){
+        var senderHash = PagSeguroDirectPayment.getSenderHash();
+        console.log(senderHash);
+        $("#hash").val(senderHash);
+	})
 </script>
 
 @endsection

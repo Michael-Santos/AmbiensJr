@@ -3,12 +3,16 @@
 @section('content')
 		<div class = "container">
 			<div id="carrossel" class="carousel slide" data-ride="carousel">
+			 
 			  <ol class="carousel-indicators">
 			    <li data-target="#carrossel" data-slide-to="0" class="active"></li>
 			    <li data-target="#carrossel" data-slide-to="1"></li>
 			    <li data-target="#carrossel" data-slide-to="2"></li>
 			  </ol>
+
+
 			  <div class="carousel-inner">
+			    
 			    <div class="carousel-item active">
 			      <img class="d-block w-100" src="{{asset ('img/placeholders/Sapo1.png')}}" >
 				  <div class="carousel-caption d-none d-md-block text-white">
@@ -16,6 +20,7 @@
 				    <p>Há um curso com pesquisa de campo sobre Anfíbios Anuros.</p>
 				  </div>
 			    </div>
+
 			    <div class="carousel-item">
 			      <img class="d-block w-100" src="{{asset ('img/placeholders/Plantas1.png')}}" >
 				  <div class="carousel-caption d-none d-md-block text-white">
@@ -23,6 +28,7 @@
 				    <p>Por que não?</p>
 				  </div>		      
 			    </div>
+
 			    <div class="carousel-item">
 			      <img class="d-block w-100" src="{{asset ('img/placeholders/Tucano1.png')}}" >
 				  <div class="carousel-caption d-none d-md-block text-white">
@@ -31,14 +37,17 @@
 				  </div>			      
 			    </div>
 			  </div>
+
 			  <a class="carousel-control-prev" href="#carrossel" role="button" data-slide="prev">
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			    <span class="sr-only">Previous</span>
 			  </a>
+
 			  <a class="carousel-control-next" href="#carrossel" role="button" data-slide="next">
 			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 			    <span class="sr-only">Next</span>
 			  </a>
+			  
 			</div>
 		</div>
 

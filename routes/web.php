@@ -139,4 +139,4 @@ Route::singularResourceParameters();
 
 //AREA DE PAGAMENTO TESTE
 	Route::get('pagamento', 'PagamentoController@index');
-	Route::post('pagamento', 'PagamentoController@pagar');
+	Route::post('pagamento', 'PagamentoController@pagar')->name('pagar');
