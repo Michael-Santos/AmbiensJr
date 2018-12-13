@@ -90,8 +90,6 @@ class ProcessoSeletivoController extends Controller
             $processo_seletivo->url_pdf = uniqid() . '.' . $request->pdf->extension();
             $request->pdf->storeAs('public/processo_seletivo_pdf', $processo_seletivo->url_pdf);
             $processo_seletivo->usa_pdf = true;
-        }else{
-            $processo_seletivo->usa_pdf = false;
         }
 
         $processo_seletivo->save();

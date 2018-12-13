@@ -14,9 +14,7 @@
 Route::singularResourceParameters();
 
 // Rotas públicas
-	Route::get('/', function () {
-	    return view('home');
-	});
+	Route::resource('/', 'HomeController');
 
 
 	Route::get('/teste', function () {

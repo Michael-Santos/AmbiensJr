@@ -9,7 +9,7 @@
 	        <h5 class="section-title h1">NOSSA EQUIPE</h5>
 
             <!-- IMAGEM DE TOPO DA EQUIPE -->
-	        <img src="{{asset ('img/placeholders/equipe.png')}}" style="width: 100%; margin-bottom: 10px;">
+	        <img src="{{asset ('img/equipe/equipe.jpg')}}" style="width: 100%; margin-bottom: 10px;">
 
             <!-- HEADER INDICIANDO SETOR -->
             <div class="card-header text-center text-white" style = 'background-color: #33AA33; margin-bottom: 15px;'>
