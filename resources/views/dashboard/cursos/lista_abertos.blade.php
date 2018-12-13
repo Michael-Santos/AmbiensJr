@@ -35,7 +35,7 @@
                                 <td>Sem inscrição</td>
                             @else
                                 <td>{{$curso->numero_vagas}}</td>
-                                <td>{{$curso->incritos}}</td>
+                                <td>{{$curso->inscritos}}</td>
                             @endif
 
                             @if($curso->pagamento == false)

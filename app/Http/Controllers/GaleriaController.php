@@ -153,9 +153,8 @@ class GaleriaController extends Controller
     public function destroy($id)
     {
         $galeria = Galeria::find($id);
-
+        Storage::deleteDirectory('public/galeria/' . $galeria->nome);
         if($galeria->delete()) {
-        	Storage::deleteDirectory('public/galeria/' . $galeria->nome);
             return response()->json([
                 'status' => 'success',
             ]);
