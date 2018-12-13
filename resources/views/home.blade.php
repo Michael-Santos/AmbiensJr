@@ -5,37 +5,34 @@
 			<div id="carrossel" class="carousel slide" data-ride="carousel">
 			 
 			  <ol class="carousel-indicators">
-			    <li data-target="#carrossel" data-slide-to="0" class="active"></li>
-			    <li data-target="#carrossel" data-slide-to="1"></li>
-			    <li data-target="#carrossel" data-slide-to="2"></li>
+			  	@for($i = 0; $i < $num_slides; $i++)
+			  		@if($i == 0)
+			  			<li data-target="#carrossel" data-slide-to="0" class="active"></li>
+			  		@else
+			  			<li data-target="#carrossel" data-slide-to="{{$i}}"></li>
+			  		@endif
+			    @endfor
 			  </ol>
-
-
-			  <div class="carousel-inner">
-			    
-			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/Sapo1.png')}}" >
-				  <div class="carousel-caption d-none d-md-block text-white">
-				    <h4>Anfíbios!</h4>
-				    <p>Há um curso com pesquisa de campo sobre Anfíbios Anuros.</p>
-				  </div>
-			    </div>
-
-			    <div class="carousel-item">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/Plantas1.png')}}" >
-				  <div class="carousel-caption d-none d-md-block text-white">
-				    <h4>Plantas como Placeholder</h4>
-				    <p>Por que não?</p>
-				  </div>		      
-			    </div>
-
-			    <div class="carousel-item">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/Tucano1.png')}}" >
-				  <div class="carousel-caption d-none d-md-block text-white">
-				    <h4>Tucano!!!</h4>
-				    <p>Olha só essa beleza!</p>
-				  </div>			      
-			    </div>
+			  <div class="carousel-inner" style="max-height: 400px">
+			  	@foreach($slides as $slide)
+				  	@if($loop->first)
+						<div class="carousel-item active">
+					      <img class="d-block w-100" src="{{asset ('storage/slides/' . $slide->url_imagem)}}" >
+						  <div class="carousel-caption d-none d-md-block text-white">
+						    <h4>{{$slide->titulo}}</h4>
+						    <p>{{$slide->descricao}}</p>
+						  </div>
+					    </div>
+			  		@else
+			  			<div class="carousel-item">
+					      <img class="d-block w-100" src="{{asset ('storage/slides/' . $slide->url_imagem)}}" >
+						  <div class="carousel-caption d-none d-md-block text-white">
+						    <h4>{{$slide->titulo}}</h4>
+						    <p>{{$slide->descricao}}</p>
+						  </div>		      
+					    </div>
+				  	@endif
+			  	@endforeach
 			  </div>
 
 			  <a class="carousel-control-prev" href="#carrossel" role="button" data-slide="prev">
