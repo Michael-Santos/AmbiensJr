@@ -45,7 +45,7 @@
                                 </a>
                             </td>
                             <td style="vertical-align: center;">
-                                <a href="#" data-toggle="modal" data-target="#modal-delete-galeria" data-remove=".foto-{{ $foto->id }}" data-url="{{ route('galeria.deletefoto', $galeria->nome, foto->id) }}">
+                                <a href="#" data-toggle="modal" data-target="#modal-delete-galeria" data-remove=".foto-{{ $foto->id }}" data-url="{{ route('galeria.deletefoto', $galeria, $foto->id) }}">
                                     <img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px">
                                 </a>
                             </td> 

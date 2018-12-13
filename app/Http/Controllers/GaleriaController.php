@@ -137,8 +137,8 @@ class GaleriaController extends Controller
     {
     	$remover = Foto::find($foto);
     	Log::info($remover);
-    	Storage::delete('public/galeria/' . $galeria . '/' . $remover->nome);
-    	$remover->delete();
+    	//Storage::delete('public/galeria/' . $galeria . '/' . $remover->nome);
+    	//$remover->delete();
 
     	return redirect()->route('galeria.edit', $galeria)->with('success', 'Foto removida com sucesso.');
     }

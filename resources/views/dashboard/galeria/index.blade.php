@@ -21,7 +21,7 @@
                 <tbody>
 
                     @foreach($galerias as $galeria)
-                    <tr>
+                    <tr class="galeria-{{ $galeria->id }}">
                         <td>{{$galeria->nome}}</td>
                         <td style="text-align: center;">
                             <a href="{{ route('galeria.edit', $galeria) }}">
@@ -79,6 +79,7 @@
         var modal = $(this);
         var url = botaoDeletar.data('url');
         var token = $('meta[name=csrf-token]').attr('content');
+        console.log(botaoDeletar);
 
         botaoConfirmacao.off('click').click(function (event) {
             $.post(url, { _method: "delete", _token: token })
