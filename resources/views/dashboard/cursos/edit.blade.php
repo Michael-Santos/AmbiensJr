@@ -7,7 +7,7 @@
 		<h1>Editar Curso</h1>
 		<p>Preencha o formulário abaixo e não esqueça de revisar antes de confirmar o cadatro.</p>
 
-		<form class="border border-light px-1 py-3 rounded" method="post" action="{{ route('eventos.store') }}" enctype="multipart/form-data" id="curso_form">
+		<form class="border border-light px-1 py-3 rounded" method="post" action="{{ route('eventos.update', $curso->id) }}" enctype="multipart/form-data" id="curso_form">
 			@csrf
 			@method('PATCH')
 			<h3>Informações do curso</h3>
@@ -42,12 +42,20 @@
 
 				<div class="form-row">
 					<div class="form-check form-check-inline">
+						@if($curso->inscricao == null)
 						<input class="form-check-input" type="checkbox" name="inscricao" id="inscricao">
+						@else
+						<input class="form-check-input" type="checkbox" name="inscricao" id="inscricao" checked="true">
+						@endif
 						<label class="form-check-label" for="inscricao">Com Inscrição</label>
 					</div>
 
 					<div class="form-check form-check-inline">
+						@if($curso->pagamento == null)
 						<input class="form-check-input" type="checkbox" name="pagamento" id="pagamento">
+						@else
+						<input class="form-check-input" type="checkbox" name="pagamento" id="pagamento" checked="true">
+						@endif
 						<label class="form-check-label" for="pagamento">Com Pagamento</label>
 					</div>
 				</div>
@@ -92,12 +100,20 @@
 			<div class="border border px-3 py-3 my-2 rounded">
 				
 				<div class="form-check form-check-inline">
+					@if($curso->pagamento_na_hora == null)
 					<input class="form-check-input" type="checkbox" name="pagamento_na_hora" id="pagamento_na_hora">
+					@else
+					<input class="form-check-input" type="checkbox" name="pagamento_na_hora" id="pagamento_na_hora" checked="true">
+					@endif
 					<label class="form-check-label" for="pagamento_na_hora">Pagamento Na Hora</label>
 				</div>
 
 				<div class="form-check form-check-inline">
+					@if($curso->pagamento_antecipado == null)
 					<input class="form-check-input" type="checkbox" name="pagamento_antecipado" id="pagamento_antecipado">
+					@else
+					<input class="form-check-input" type="checkbox" name="pagamento_antecipado" id="pagamento_antecipado" checked="true">
+					@endif
 					<label class="form-check-label" for="pagamento_antecipado">Pagamento Antecipado</label>
 				</div>
 
@@ -107,7 +123,7 @@
 				</div>
 			</div>
 
-			<button type="submit" class="btn btn-primary">Cadastrar Curso</button>
+			<button type="submit" class="btn btn-primary">Atualizar Curso</button>
 
 		</form>
 	</div>

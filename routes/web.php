@@ -32,9 +32,7 @@ Route::singularResourceParameters();
 	    return view('projetos');
 	});	
 
-	Route::get('/cursos', function () {
-	    return view('cursos');
-	});
+	Route::get('/cursos', 'EventoController@publico')->name('publico');
 
 	Route::get('/galeria', function () {
 	    return view('galeria');

@@ -64,12 +64,16 @@ class EventoController extends Controller
         $evento->hora_evento = $request->hora_evento;
 
         /* Tratar iamgem */
-        if($request->hasFile('imagem')) {
+        if(!is_null($request->imagem)){
             $nome_img = uniqid() . '.' . $request->imagem->extension();
-            $foto->storeAs('public/eventos/' . $nome_img);
+            $evento->url_imagem = $nome_img;
+            $request->imagem->storeAs('public/eventos/', $nome_img);
+        }else{
+            $evento->url_imagem = null;
         }
     
         if($request->has('inscricao')) {
+            $evento->inscricao = true;
             $evento->data_inicio_inscricao = $request->data_inicio_inscricao;
             $evento->hora_inicio_inscricao = $request->hora_inicio_inscricao;
             $evento->data_fim_inscricao = $request->data_fim_inscricao;
@@ -78,12 +82,14 @@ class EventoController extends Controller
         }
 
         if($request->has('pagamento')) {
+            $evento->pagamento = true;
+            $evento->valor = $request->valor;
             if($request->has('pagamento_na_hora')) {
                 $evento->pagamento_na_hora = true;
             }
 
-            if($request->has('pagamento_andiatado')) {
-                $evento->pagamento_andiatado = true;
+            if($request->has('pagamento_antecipado')) {
+                $evento->pagamento_antecipado = true;
             }
         }
 
@@ -100,7 +106,13 @@ class EventoController extends Controller
      */
     public function show($id)
     {
-       
+        
+    }
+
+    public function publico()
+    {
+       $cursos = Evento::all()->sortByDesc('data_evento');
+        return view('/cursos')->with("cursos", $cursos);
     }
 
     public function lista_abertos(){
@@ -147,7 +159,77 @@ class EventoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validateData = $request->validate([
+            'nome' => 'required',
+            'descricao' => 'required',
+            'data_evento' => 'required|date_format:Y-m-d',
+            'hora_evento' => 'required|date_format:H:i',
+            'imagem' => 'image',
+            
+            'data_inicio_inscricao' => 'nullable|date_format:Y-m-d',
+            'hora_inicio_inscricao' => 'nullable|date_format:H:i',
+            'data_fim_inscricao' => 'nullable|date_format:Y-m-d',
+            'hora_fim_inscricao' => 'nullable|date_format:H:i',
+            'numero_vagas' => 'nullable|integer',
+
+            'valor' => 'nullable|integer'
+        ]);
+        
+        $evento = Evento::find($id)->first();
+        $evento->nome = $request->nome;
+        $evento->descricao = $request->descricao;
+        $evento->data_evento = $request->data_evento;
+        $evento->hora_evento = $request->hora_evento;
+
+        /* Tratar iamgem */
+        if(!is_null($request->imagem)){
+            $nome_img = uniqid() . '.' . $request->imagem->extension();
+            $evento->url_imagem = $nome_img;
+            $request->imagem->storeAs('public/eventos/', $nome_img);
+        }else{
+            $evento->url_imagem = null;
+        }
+    
+        if($request->has('inscricao')) {
+            $evento->inscricao = true;
+            $evento->data_inicio_inscricao = $request->data_inicio_inscricao;
+            $evento->hora_inicio_inscricao = $request->hora_inicio_inscricao;
+            $evento->data_fim_inscricao = $request->data_fim_inscricao;
+            $evento->hora_fim_inscricao = $request->hora_fim_inscricao;
+            $evento->numero_vagas = $request->numero_vagas;
+        }else{
+            $evento->inscricao = false;
+            $evento->data_inicio_inscricao = null;
+            $evento->hora_inicio_inscricao = null;
+            $evento->data_fim_inscricao = null;
+            $evento->hora_fim_inscricao = null;
+            $evento->numero_vagas = 0;
+        }
+
+        if($request->has('pagamento')) {
+            $evento->pagamento = true;
+            $evento->valor = $request->valor;
+            if($request->has('pagamento_na_hora')) {
+                $evento->pagamento_na_hora = true;
+            }else{
+                $evento->pagamento_na_hora = false;
+            }
+
+            if($request->has('pagamento_antecipado')) {
+                $evento->pagamento_antecipado = true;
+            }else{
+                $evento->pagamento_antecipado = false;
+            }
+        }else{
+            $evento->pagamento = false;
+            $evento->valor = null;
+            $evento->pagamento_na_hora = false;
+            $evento->pagamento_antecipado = false;
+        }
+
+        $evento->save();
+
+        return redirect()->route('eventos.index', $evento)->with('success', 'Curso cadastrado com sucesso.');
     }
 
     /**
