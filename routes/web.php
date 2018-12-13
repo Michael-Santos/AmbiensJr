@@ -38,7 +38,7 @@ Route::singularResourceParameters();
 
 	Route::get('/contato', function () {
 	    return view('contato');
-	});	
+	})->name('contato');	
 
 	Route::get('/pseletivo', 'ProcessoSeletivoController@show')->name('show');
 
@@ -136,3 +136,5 @@ Route::singularResourceParameters();
 
 	Route::resource('admin/galeria', 'GaleriaController');
 
+//AREA DE CONTATO
+	Route::post('/contato', 'ContatoController@store')->name('contato.store');

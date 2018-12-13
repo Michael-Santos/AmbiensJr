@@ -13,19 +13,38 @@
 		</div>
 
 			<div class="col-md-5">
+			
+			@if(session('success'))
+		        <div class="alert alert-success">
+		            {{ session('success') }}
+		        </div>
+	        @endif
+	        @if($errors->any())
+	          	<div class="alert alert-danger">
+	            @foreach ($errors->all() as $error)
+	             	<span>{{ $error }}</span>
+	             	<br>
+	            @endforeach
+	          	</div>
+	        @endif
+
+	        <div id="resultado">
+	        </div>
+
 			<h4><strong>Formulário para contato</strong></h4>
-				<form>
+				<form method="post" action="{{ route('contato.store') }}">
+					@csrf
 					<div class="form-group">
-						<input type="text" class="form-control" name="" value="" placeholder="Nome">
+						<input type="text" class="form-control" name="nome" value="" placeholder="Nome">
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control" name="" value="" placeholder="E-mail">
+						<input type="email" class="form-control" name="email" value="" placeholder="E-mail">
 					</div>
 					<div class="form-group">
-						<input type="tel" class="form-control" name="" value="" placeholder="Telefone">
+						<input type="text" class="form-control" name="assunto" value="" placeholder="Assunto">
 					</div>
 					<div class="form-group">
-						<textarea class="form-control" name="" rows="3" placeholder="Mensagem"></textarea>
+						<textarea class="form-control" name="mensagem" rows="3" placeholder="Mensagem"></textarea>
 					</div>
 					<button class="btn btn-default" type="submit" name="button">
 						<i class="fa fa-paper-plane-o" aria-hidden="true"></i> Enviar
