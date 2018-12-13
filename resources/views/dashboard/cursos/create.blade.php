@@ -52,8 +52,8 @@
 				</div>
 			</div>
 
-			<h3 class="mt-4">Informações de Inscrição</h3>
-			<div class="border border px-3 py-3 my-2 rounded">
+			<h3 id="informacao-incricao" class="mt-4">Informações de Inscrição</h3>
+			<div id="caixa-informacao-inscricao" class="border border px-3 py-3 my-2 rounded">
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="data_inicio_inscricao">Data da Abertura</label>
@@ -87,8 +87,8 @@
 				</div>
 			</div>
 
-			<h3 class="mt-4">Informações de Pagamento</h3>
-			<div class="border border px-3 py-3 my-2 rounded">
+			<h3 id= "informacao-pagamento" class="mt-4">Informações de Pagamento</h3>
+			<div id="caixa-informacao-pagamento" class="border border px-3 py-3 my-2 rounded">
 				
 				<div class="form-check form-check-inline">
 					<input class="form-check-input" type="checkbox" name="pagamento_na_hora" id="pagamento_na_hora">
@@ -118,6 +118,35 @@
 	$("#curso_form").submit(function() {
 	 	$('input[name="valor"]').unmask();
 	});
+
+	// Desabilita os campos não mais necessários
+	$('#inscricao').click(function() {
+		if ($("#inscricao").is(':checked')) {
+			$("#informacao-incricao").show();
+		    $("#caixa-informacao-inscricao").show();
+		} else {
+		    $("#informacao-incricao").hide();
+			$("#caixa-informacao-inscricao").hide();
+		}
+	});
+
+	$("#pagamento").click(function() {
+		if ($("#pagamento").is(':checked')) {
+			$("#informacao-pagamento").show();
+		    $("#caixa-informacao-pagamento").show();
+		} else {
+		    $("#informacao-pagamento").hide();
+			$("#caixa-informacao-pagamento").hide();
+		}
+	});
+
+	$( document ).ready(function() {
+	    $('#inscricao').click().click();
+	    $('#pagamento').click().click();
+	});
+
+
+
 </script>
 
 @endsection
