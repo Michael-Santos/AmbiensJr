@@ -138,3 +138,7 @@ Route::singularResourceParameters();
 
 //AREA DE CONTATO
 	Route::post('/contato', 'ContatoController@store')->name('contato.store');
+
+//AREA DE PAGAMENTO TESTE
+	Route::get('pagamento', 'PagamentoController@index');
+	Route::post('pagamento', 'PagamentoController@pagar');
