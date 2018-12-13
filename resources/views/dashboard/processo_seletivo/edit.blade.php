@@ -31,7 +31,11 @@
 
             <div class="border px-3 py-3 my-2 rounded">
                 <div class="form-group">
-                    <input type="checkbox" name="estado" id="ps_estado" value="{{ $processo_seletivo->exibeEstado() }}">
+                    @if($processo_seletivo->usa_descricao == true)
+                    <input type="checkbox" name="estado" id="ps_estado" checked="true">
+                    @else
+                    <input type="checkbox" name="estado" id="ps_estado">
+                    @endif
                     <label for="ps_desc">Ativar processo seletivo</label>
                 </div>
 
@@ -40,7 +44,11 @@
                     <textarea class="form-control" rows="5" placeholder="Descrição do processo" name="descricao" id="ps_desc">{{ $processo_seletivo->descricao }}</textarea>
                     
                     <div class="form-check">
+                        @if($processo_seletivo->usa_descricao == true)
+                        <input class="form-check-input" type="checkbox" name="usa_descricao" id="check-descricao" checked="true">
+                        @else
                         <input class="form-check-input" type="checkbox" name="usa_descricao" id="check-descricao">
+                        @endif
                         <label class="form-check-label" for="check-descricao">
                         Exibir descrição na página principal
                         </label>
@@ -66,7 +74,11 @@
                         <label class="custom-file-label" for="pdf">Escolha a arquivo</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="check-pdf" {{ $processo_seletivo->exibePdf() }}>
+                        @if($processo_seletivo->usa_pdf == true)
+                        <input class="form-check-input" type="checkbox" id="check-pdf" checked="true">
+                        @else
+                        <input class="form-check-input" type="checkbox" id="check-pdf">
+                        @endif
                         <label class="form-check-label" for="check-pdf">
                         Exibir pdf na página principal
                         </label>
@@ -78,7 +90,11 @@
                     <input type="text" class="form-control" name="link_driver" id="link_ps" placeholder="Cole o Link do Google Forms que será usado no Processo Seletivo Atual" value="{{ $processo_seletivo->link_driver }}" >
                     
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="usa_link_driver" id="check-link" {{ $processo_seletivo->exibeLink() }}>
+                        @if($processo_seletivo->usa_link_driver == true)
+                        <input class="form-check-input" type="checkbox" name="usa_link_driver" id="check-link" checked="true">
+                        @else
+                        <input class="form-check-input" type="checkbox" name="usa_link_driver" id="check-link">
+                        @endif
                         <label class="form-check-label" for="check-link">
                         Exibir link na página principal
                         </label>

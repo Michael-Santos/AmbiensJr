@@ -12,7 +12,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link active" href = "{{ url('') }}" id="" role="button">Início</a>
+				<a class="nav-link" href = "{{ url('') }}" id="" role="button">Início</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href = "{{ url('equipe') }}" id="" role="button">Equipe</a>

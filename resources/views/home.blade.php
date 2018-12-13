@@ -10,21 +10,21 @@
 			  </ol>
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/Sapo1.png')}}" alt="First slide">
+			      <img class="d-block w-100" src="{{asset ('img/placeholders/Sapo1.png')}}" >
 				  <div class="carousel-caption d-none d-md-block text-white">
 				    <h4>Anfíbios!</h4>
 				    <p>Há um curso com pesquisa de campo sobre Anfíbios Anuros.</p>
 				  </div>
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/Plantas1.png')}}" alt="Second slide">
+			      <img class="d-block w-100" src="{{asset ('img/placeholders/Plantas1.png')}}" >
 				  <div class="carousel-caption d-none d-md-block text-white">
 				    <h4>Plantas como Placeholder</h4>
 				    <p>Por que não?</p>
 				  </div>		      
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="{{asset ('img/placeholders/Tucano1.png')}}" alt="Third slide">
+			      <img class="d-block w-100" src="{{asset ('img/placeholders/Tucano1.png')}}" >
 				  <div class="carousel-caption d-none d-md-block text-white">
 				    <h4>Tucano!!!</h4>
 				    <p>Olha só essa beleza!</p>
@@ -45,8 +45,7 @@
 		<div class="container">
 			<h3 style="color:green; margin-left: 5%;">Quem Somos?</h3>
 				<p class="text-justify" style = "margin-left: 5%; margin-right: 5%">
-				A Ambiens Jr é uma associação sem fins econômicos formada por alunos da graduação dos cursos de Ciências Biológicas da UFSCar - Campus Sorocaba e com o objetivo de realizar consultorias na áreas de biologia e conservação ambiental, cursos e eventos de capacitação dos alunos para o mercado de trabalho, além da disseminação do espiríto empreendedor.<br>
-				A Empresa conta também com o apoio de professores altamente capacitados, provendo serviços de confiança, qualidade e eficiência.
+				{{$conteudo_quem_somos->conteudo}}
 				<p>
 		</div>
 
@@ -61,7 +60,7 @@
 						</div>
 						<h4 class="what_we_do_title">Missao</h4>
 						<div class="what_we_do_content text-justify">
-							Promover com excelência serviços de consultoria e soluções ambientais por meio da interface entre conhecimento acadêmico e empreendedorismo.
+							{{$conteudo_missao->conteudo}}
 						</div>
 						<!--
 						<a class="what_we_do_icon" href="#">
@@ -79,7 +78,7 @@
 						</div>
 						<h4 class="what_we_do_title">Visão</h4>
 						<div class="what_we_do_content text-justify">
-							Ser referência no âmbito de soluções ambientais em Sorocaba e região, oferecendo serviços de qualidade e relevância no meio acadêmico-empresarial, aumentando o impacto da área de ciências biológicas dentro do movimento empresa júnior.
+							{{$conteudo_visao->conteudo}}
 						</div>
 						<!--
 						<a class="what_we_do_icon" href="#">
@@ -97,11 +96,7 @@
 						</div>
 						<h4 class="what_we_do_title">Valores</h4>
 						<div class="what_we_do_content text-justify">
-							- Ética</br>
-							- Trabalho em Equipe</br>
-							- Comprometimento</br>
-							- Responsabilidade</br>
-							- Excelência</br>
+							{{$conteudo_valores->conteudo}}
 						</div>
 						<!--
 						<a class="what_we_do_icon" href="#">
