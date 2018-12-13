@@ -41,27 +41,24 @@ class MembroController extends Controller
             'nome' => 'required'
         ]);
 
-        /* Verifica se existe o setor selecionado, caso não existe retorna erro, caso contrário salva */
-        if (!empty($request->setor)){
-            if ($existeSetor = DB::table('setores')->where('id', $request->setor)->doesntExist()){
-                $response = array(
-                  'status' => 'error',
-                  'msg' => 'Não existe o setor informado'
-                );
-                return response()->json($response);
-            }
+        $membro = new Membro();
+        $membro->nome = $request->membro_nome;
+        $membro->cargo = $request->cargo_membro;
+        $membro->setor = $request->setor_membro;
+        $membro->email = $request->email_membro;
+        $membro->link_facebook = $request->facebook_membro;
+        $membro->link_twitter = $request->twitter_membro;
+        $membro->link_instagram = $request->instagram_membro;
+
+
+        if(!is_null($request->imagem_membro)){
+                $membro->imagem = uniqid() . '.' . $request->imagem_membro->extension();
+                $request->imagem_membro->storeAs('public/membros/' . $membro->imagem);
         }
 
-        $setor = new Membro();
-        $setor->nome = $request->nome;
-        $setor->
-        $setor->save();
+        $membro->save();
 
-        $response = array(
-          'status' => 'success',
-          'msg' => 'Setor cadastrado com sucesso'
-        );
-        return response()->json($response);
+        return redirect()->route('membros.index')->with('success', 'Membro cadastrado com sucesso.');
     }
 
     /**
@@ -83,7 +80,9 @@ class MembroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $membro = Membro::find($id);
+
+        return view('dashboard/membro/edit')->with("membro", $membro);
     }
 
     /**
@@ -95,7 +94,25 @@ class MembroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $membro = Membro::find($id);
+        
+        $membro->nome = $request->membro_nome;
+        $membro->cargo = $request->cargo_membro;
+        $membro->setor = $request->setor_membro;
+        $membro->email = $request->email_membro;
+        $membro->link_facebook = $request->facebook_membro;
+        $membro->link_twitter = $request->twitter_membro;
+        $membro->link_instagram = $request->instagram_membro;
+
+
+        if(!is_null($request->imagem_membro)){
+                $membro->imagem = uniqid() . '.' . $request->imagem_membro->extension();
+                $request->imagem_membro->storeAs('public/membros/' . $membro->imagem);
+        }
+
+        $membro->save();
+
+        return redirect()->route('membros.index')->with('success', 'Membro alterado com sucesso.');
     }
 
     /**
@@ -106,6 +123,15 @@ class MembroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $membro = Membro::find($id);
+        if($membro->delete()) {
+            return response()->json([
+                'status' => 'success',
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+            ]);
+        }
     }
 }

@@ -44,9 +44,10 @@ class ProcessoSeletivoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $processo_seletivo = ProcessoSeletivo::first();
+        return view('pseletivo', ["processo_seletivo" => $processo_seletivo]);
     }
 
     /**
@@ -82,12 +83,15 @@ class ProcessoSeletivoController extends Controller
         $processo_seletivo->data_final = $request->data_final;
         $processo_seletivo->hora_final = $request->hora_final;
         $processo_seletivo->link_driver = $request->link_driver;
-        $processo_seletivo->usa_descricao = $request->has('usa_link_driver') ? true : false;
+        $processo_seletivo->usa_link_driver = $request->has('usa_link_driver') ? true : false;
 
         if($request->hasFile('pdf')) {
             $processo_seletivo->deletePdf();
             $processo_seletivo->url_pdf = uniqid() . '.' . $request->pdf->extension();
             $request->pdf->storeAs('public/processo_seletivo_pdf', $processo_seletivo->url_pdf);
+            $processo_seletivo->usa_pdf = true;
+        }else{
+            $processo_seletivo->usa_pdf = false;
         }
 
         $processo_seletivo->save();

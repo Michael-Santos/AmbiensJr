@@ -19,7 +19,9 @@ class CreateTableMembros extends Migration
             $table->string('cargo')->nullable();
             $table->string('link_facebook')->nullable();
             $table->string('link_twitter')->nullable();
+            $table->string('link_instagram')->nullable();
             $table->string('email')->nullable();
+            $table->string('imagem')->nullable();
             $table->unsignedInteger('setor')->nullable();
 
             $table->foreign('setor')->references('id')->on('setores')->onDelete('set null');

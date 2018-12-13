@@ -26,9 +26,9 @@
                 <div class="card card-body">
                     Data do Evento: {{$curso->data_evento}} às {{$curso->hora_evento}}<br>
                     @if($curso->inscricao == true)
-                        Inscrição: Sim
+                        Inscrição: Sim <br>
                         @if($curso->pagamento == true)
-                            - Valor: R$ {{$curso->valor}} (
+                            Valor: R$ {{$curso->valor}} (
                             @if($curso->pagamento_na_hora == true && $curso->pagamento_antecipado == true)
                                 Na hora / Antecipado
                             @elseif($curso->pagamento_antecipado == true)

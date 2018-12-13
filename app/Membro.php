@@ -12,8 +12,11 @@ class Membro extends Model
     	'id',
     	'nome',
     	'cargo',
+        'email',
     	'link_facebook',
-    	'setor'
+        'link_twitter',
+        'link_instagram',
+    	'setor'        
 	];
 
 	public function setor(){

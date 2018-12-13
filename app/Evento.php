@@ -13,14 +13,17 @@ class Evento extends Model
         'hora_evento',
         'inscricao',
         'pagamento',
-        'imagem',
+        'url_imagem',
+        'inscritos',
+        'valor',
         'data_inicio_inscricao',
         'hora_inicio_inscricao',
         'data_fim_inscricao',
         'hora_fim_inscricao',
         'numero_vagas',
         'pagamento_na_hora',
-        'pagamento_antecipado'
+        'pagamento_antecipado',
+        'finalizado'
     ];
 
     public function usuarios()

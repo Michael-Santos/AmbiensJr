@@ -3,6 +3,21 @@
 @section('content')
 
 <section id="cursos_abertos">
+    @if(session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+      </div>
+    @endif
+    @if($errors->any())
+      <div class="alert alert-danger">
+        @foreach ($errors->all() as $error)
+          <span>{{ $error }}</span>
+          <br>
+        @endforeach
+      </div>
+    @endif
+    <div id="resultado">
+    </div>
     <div class="container pt-3">
         <h1>Cursos Abertos</h1>
         <p>Tabela de cursos em andamento.<br>
@@ -54,7 +69,7 @@
                                 </a>
                             </td>
                             <td style="text-align: center;">
-                                <a href="{{ route('cursos.destroy', $curso->id) }}">
+                                <a href="#" data-toggle="modal" data-target="#modal-delete-curso" data-remove=".curso-{{ $curso->id }}" data-url="{{ route('cursos.destroy', $curso->id) }}">
                                     <img src="{{asset ('img/icones/excluir.png')}}" style="height: 25px">
                                 </a>
                             </td>
@@ -69,5 +84,61 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <!-- Modal Exclusão -->
+    <div id="modal-delete-curso" class="modal-delete modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-delete-curso" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-delete-curso">Confirmação para deletar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Deletar mesmo o curso?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button class="btn btn-delete" id="btn-delete" data-url="">
+              <span class="mr-1">Deletar</span>
+              <i class="icon fas fa-lg fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fim Modal Exclusão -->
 </section>
+
+<script>
+
+    /* MODAL DE DELEÇÃO */
+    /* Passa os dados para o modal de deleção */
+    $('#modal-delete-curso').on('shown.bs.modal', function (event) {
+        var botaoConfirmacao = $(this).find('#btn-delete');
+        var botaoDeletar = $(event.relatedTarget);
+        var elementoRemover = $(botaoDeletar.data('remove'));
+        var modal = $(this);
+        var url = botaoDeletar.data('url');
+        var token = $('meta[name=csrf-token]').attr('content');
+
+        botaoConfirmacao.off('click').click(function (event) {
+            $.post(url, { _method: "delete", _token: token })
+                .done(function (data) {
+                    if (data.status == 'success'){
+                        modal.modal('hide');
+                        elementoRemover.remove();
+                        $('#resultado').attr('class', 'alert alert-success')
+                        $('#resultado').append('Curso deletetado com sucesso');
+
+                    } else {
+                        console.log(data);
+                    }
+                });     
+        });
+    });
+
+</script>
 @endsection

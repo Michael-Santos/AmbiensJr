@@ -14,7 +14,7 @@
         </li>
         <!-- /END Separator -->
         <!-- Menu with submenu -->
-        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+        <a href="{{ route('conteudo.index') }}" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-home fa-fw mr-3"></span> 
                 <span class="menu-collapsed">Editar Home</span>
@@ -43,7 +43,7 @@
         </a>
         <!-- Submenu content -->
         <div id='submenu2' class="collapse sidebar-submenu">
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+            <a href="" class="list-group-item list-group-item-action bg-dark text-white">
                 <span class="menu-collapsed">Setores</span>
             </a>
             <a href="{{ route('membros.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
@@ -72,7 +72,7 @@
             </div>
         </a>
 
-        <a href="#" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+        <a href="{{ route('processo.edit') }}" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-file fa-fw mr-3"></span>
                 <span id="collapse-text" class="menu-collapsed">Processo Seletivo</span>

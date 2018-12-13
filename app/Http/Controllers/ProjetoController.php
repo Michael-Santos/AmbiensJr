@@ -57,7 +57,7 @@ class ProjetoController extends Controller
 
         $projeto->save();
 
-        return redirect()->route('projetos.index')->with('success', 'Processo seletivo cadastrado com sucesso');
+        return redirect()->route('projetos.index')->with('success', 'Projeto cadastrado com sucesso');
     }
 
     /**
@@ -69,6 +69,12 @@ class ProjetoController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function publico()
+    {
+       $projetos = Projeto::all()->sortByDesc('titulo');
+        return view('/projetos')->with("projetos", $projetos);
     }
 
     /**
@@ -111,7 +117,7 @@ class ProjetoController extends Controller
 
         $projeto->save();
 
-        return redirect()->route('projetos.edit', $projeto)->with('success', 'Processo seletivo editado com sucesso');
+        return redirect()->route('projetos.edit', $projeto)->with('success', 'Projeto editado com sucesso');
     }
 
     /**

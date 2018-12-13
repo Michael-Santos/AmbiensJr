@@ -10,7 +10,8 @@ class Inscricao extends Model
 
     protected $fillable = [
         'usuario_id', 
-        'evento_id'
+        'evento_id',
+        'presenca'
     ];
 
 }

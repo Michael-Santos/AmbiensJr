@@ -45,6 +45,7 @@ class InscricaoController extends Controller
             $inscricao->usuario_id = $user;
             $inscricao->curso_id = $curso;
             $inscricao->save();
+            $evento->inscritos = $evento->inscritos + 1;
             return redirect()->route('cursos')->with('success', 'Curso cadastrado com sucesso.');
             
         }
@@ -101,7 +102,9 @@ class InscricaoController extends Controller
      */
     public function destroy($curso, $user)
     {
+        $evento = Evento::find($curso);
         $remov = Inscricao::where(['usuario_id' => $user, 'evento_id' => $curso]);
         $remov->delete();
+        $evento->inscritos = $evento->inscritos - 1;
     }
 }

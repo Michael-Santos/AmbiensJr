@@ -3,16 +3,20 @@
 @section('content')
 <!-- CONTAINER PRINCIPAL -->
 
-<div class="container">
-	<img src="{{asset ('img/placeholders/RH.png')}}" style="width: 100%; height: 200px;">
+<div class="container mb-3">
+	<img src="{{asset ('img/placeholders/RH.png')}}" style="width: 100%; height: 300px;">
 </div>
 
 
 <div class="container">
-	<p class="text-justify">No momento, não há qualquer processo seletivo em andamento. Por favor fiquem atentos a novas informações pelo site e redes sociais.<br>Em caso de dúvidas, verifique o edital abaixo.</p>
+	@if($processo_seletivo->estado == false)
+	<p class="text-justify">No momento, não há qualquer processo seletivo em andamento. 
+		<br>Por favor fiquem atentos a novas informações pelo site e redes sociais.
+		<br>Em caso de dúvidas, entre em contato conosco na página de contatos</p>
+	@else
+	<h2> Processo Seletivo em andamento</h2>
 
-	<a href="{{asset ('docs/Edital-Trabalhe Conosco.pdf')}}"><img src="{{asset ('img/icones/pdf.png')}}" style="height: 50px; display: inline;">
-	<p style="display: inline;">Edital - Trabalhe Conosco</p></a>	
+	@endif
 </div> 
 
 <!--

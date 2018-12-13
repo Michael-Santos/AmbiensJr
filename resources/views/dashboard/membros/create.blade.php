@@ -7,7 +7,7 @@
 		<h1>Cadastrar Membro</h1>
 		<p>Preencha o formulário abaixo e não esqueça de revisar antes de confirmar o cadatro.</p>
 
-		<form class="border border-light px-1 py-3 rounded">
+		<form class="border border-light px-1 py-3 rounded" action="{{ route('membros.store') }}" enctype="multipart/form-data" method="post">
 			<div class="border px-3 py-3 my-2 rounded">
 				<div class="form-group">
 					<label for="membro_nome">Nome do Membro</label>
@@ -21,6 +21,11 @@
 					  <option value="2">Two</option>
 					  <option value="3">Three</option>
 					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="cargo_membro">Cargo do Membro</label>
+					<input type="text" class="form-control" name="cargo_membro" id="cargo_membro" placeholder="Nome" required>
 				</div>
 
 				<div class="form-group">
@@ -51,7 +56,7 @@
 					</div>
 				</div>
 
-			<button type="submit" class="btn btn-primary">Atualizar Membro</button>
+			<button type="submit" class="btn btn-primary">Cadastrar Membro</button>
 
 		</form>
 	</div>
