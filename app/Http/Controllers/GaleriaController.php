@@ -133,7 +133,7 @@ class GaleriaController extends Controller
         return redirect()->route('galeria.edit', $galeria)->with('success', 'Fotos adicionadas com sucesso.');
     }
 
-    public function deletefoto(Request $request, $galeria, $foto)
+    public function deletefoto(Request $request, Galeria $galeria, Foto $foto)
     {
     	$remover = Foto::find($foto);
     	Log::info($remover);
