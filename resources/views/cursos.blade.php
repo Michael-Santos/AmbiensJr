@@ -7,10 +7,10 @@
         <div class="container border rounded pt-3 pb-3">
             <!-- Exibição de informações básicas do curso -->
             <div class="media pt-3 mb-3" >
-                @if($curso->img == null)
+                @if($curso->url_imagem == null)
                 <img class="align-self-start mr-3 rounded"src="{{asset ('img/placeholders/equipe.png')}}" style="width: 50%">
                 @else
-                <img class="align-self-start mr-3 rounded"src="{{asset ('storage/eventos/' . $curso->nome_img)}}" style="width: 50%">
+                <img class="align-self-start mr-3 rounded"src="{{asset ('storage/eventos/' . $curso->url_imagem)}}" style="width: 50%">
                 @endif
                 <div class="media-body">
                     <h2 class="mt-0">{{$curso->nome}}</h2>
@@ -43,8 +43,11 @@
                     @else
                         Sem Inscrições
                     @endif
+
+                    @if($curso->inscricao == true)
                     <button class="btn btn-success">Inscreva-se</button>
                     <button class="btn btn-warning">Para se inscrever você deve estar logado</button>
+                    @endif
                 </div>
             </div>
         </div>

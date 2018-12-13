@@ -186,8 +186,6 @@ class EventoController extends Controller
             $nome_img = uniqid() . '.' . $request->imagem->extension();
             $evento->url_imagem = $nome_img;
             $request->imagem->storeAs('public/eventos/', $nome_img);
-        }else{
-            $evento->url_imagem = null;
         }
     
         if($request->has('inscricao')) {
@@ -241,6 +239,9 @@ class EventoController extends Controller
     public function destroy($id)
     {
         $evento = Evento::find($id);
+        if(!is_null($evento->url_imagem)){
+            Storage::delete('public/eventos/'. $evento->url_imagem);
+        }
 
         if($evento->delete()) {
             return response()->json([
