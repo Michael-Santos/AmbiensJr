@@ -46,6 +46,7 @@
 
                     @if($curso->inscricao == true)
                     <button class="btn btn-success">Inscreva-se</button>
+                    <button class="btn btn-danger" disabled>Sem vagas</button>
                     <button class="btn btn-warning">Para se inscrever você deve estar logado</button>
                     @endif
                 </div>
