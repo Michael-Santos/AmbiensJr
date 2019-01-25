@@ -5,7 +5,7 @@
         <!-- Foto de perfil -->
         <div class="d-flex w-100 justify-content-start align-items-center text-white block-img-perfil">
             <img src="{{ asset('img/equipe/rodrigo.jpg') }}" alt="Rodrigo" class="img-perfil rounded-circle">
-            <span>Rodrigo<br>Admin</span>
+            <span>Admin</span>
         </div>
 
         <!-- Separator with title -->
@@ -20,11 +20,11 @@
                 <span class="menu-collapsed">Editar Home</span>
             </div>
         </a>
-        
-        <a href="#" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+
+        <a href="{{ route('slides.index') }}" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fa fa-user fa-fw mr-3"></span>
-                <span class="menu-collapsed">Perfil</span>
+                <span class="fa fa-image fa-fw mr-3"></span> 
+                <span class="menu-collapsed">Slide da Home</span>
             </div>
         </a>
 

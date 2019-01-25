@@ -10,7 +10,7 @@
 						<div class="card bg-dark text-white">
 							<img class="card-img" src="https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg" alt="Card image">
 							<div class="card-img-overlay">
-								<h4 class="card-title">Doguineos</h4>
+								<h4 class="card-title">Batata</h4>
 							</div>
 						</div>
 					</a>		
