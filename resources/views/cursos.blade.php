@@ -45,8 +45,12 @@
                     @endif
 
                     @if($curso->inscricao == true)
-                    <button class="btn btn-success">Inscreva-se</button>
-                    <button class="btn btn-danger" disabled>Sem vagas</button>
+                        @if($curso->numero_vagas == 0 || $curso->numero_vagas == $curso->inscritos)
+                        <button class="btn btn-success">Inscreva-se</button>
+                        @else
+                        <button class="btn btn-danger" disabled>Sem vagas</button>
+                        @endif
+
                     <button class="btn btn-warning">Para se inscrever você deve estar logado</button>
                     @endif
                 </div>

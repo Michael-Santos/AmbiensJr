@@ -134,7 +134,7 @@
 							</div>
 					</div>
 				</div>
-				<a class = "btn btn-success" href = "galeria.html">Voltar</a>
+				<a class = "btn btn-success" href = "{{ route('galeria') }}">Voltar</a>
 			</div>
 			<!-- /Container Principal -->
 @endsection

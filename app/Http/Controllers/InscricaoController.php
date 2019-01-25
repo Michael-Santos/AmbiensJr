@@ -49,7 +49,6 @@ class InscricaoController extends Controller
             return redirect()->route('cursos')->with('success', 'Curso cadastrado com sucesso.');
             
         }
-
     }
 
     /**

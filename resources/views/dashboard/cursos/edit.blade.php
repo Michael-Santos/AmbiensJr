@@ -19,7 +19,7 @@
 
 				<div class="form-group">
 					<label for="descricao">Descrição do curso</label>
-					<textarea class="form-control" name="descricao" placeholder="Digite a descrição do curso" id="descricao" rows="5" value="{{ old('descricao') ?: $curso->descricao }}" required></textarea>
+					<textarea class="form-control" name="descricao" placeholder="Digite a descrição do curso" id="descricao" rows="5" required>{{ old('descricao') ?: $curso->descricao }}</textarea>
 
 				</div>
 

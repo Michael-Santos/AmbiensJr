@@ -32,7 +32,7 @@ Route::singularResourceParameters();
 
 	Route::get('/galeria', function () {
 	    return view('galeria');
-	});
+	})->name('galeria');
 
 	Route::get('/contato', function () {
 	    return view('contato');
@@ -129,6 +129,10 @@ Route::singularResourceParameters();
 	});
 
 //AREA DE GALERIA
+	Route::get('/admin/album', function() {
+		return view('album');
+	})->name('album');
+
 	Route::patch('/admin/galeria/{galeria}', 'GaleriaController@updatefotos')->name('galeria.updatefotos');
 	Route::get('/admin/galeria/{galeria}/{foto}', 'GaleriaController@deletefoto')->name('galeria.deletefoto');
 
