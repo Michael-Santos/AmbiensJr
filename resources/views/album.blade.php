@@ -12,103 +12,110 @@
 						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
 								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
-									 data-image="https://via.placeholder.com/900"
+									 data-image="{{asset ('img/galeria/teste/1.png')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://via.placeholder.com/300"
+												 src="{{asset ('img/galeria/teste/1.png')}}"
 												 alt="Another alt text">
 								</a>
 						</div>	
 						<!-- /Elem -->
-						
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Golden"
-									 data-image="https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg"
-									 data-target="#image-gallery">
-										<img class="img-thumbnail"
-												 src="https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg"
-												 alt="Another alt text">
-								</a>
-						</div>
 
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Clone"
-									 data-image="https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2018-02/cloned_dogs_mdorottya_123rf.png?itok=yiaSkqQA"
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/2.png')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2018-02/cloned_dogs_mdorottya_123rf.png?itok=yiaSkqQA"
-												 alt="Another alt text">
-								</a>
-						</div>		
-
-						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Tchuquinho"
-									 data-image="https://www.guidedogs.org/wp-content/uploads/2018/01/Mobile.jpg"
-									 data-target="#image-gallery">
-										<img class="img-thumbnail"
-												 src="https://www.guidedogs.org/wp-content/uploads/2018/01/Mobile.jpg"
+												 src="{{asset ('img/galeria/teste/2.png')}}"
 												 alt="Another alt text">
 								</a>
 						</div>	
+						<!-- /Elem -->	
 
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Uhuu"
-									 data-image="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Natural-Dog-Law-2-To-dogs%2C-energy-is-everything.jpg?itok=Z-ujUOUr"
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/3.png')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Natural-Dog-Law-2-To-dogs%2C-energy-is-everything.jpg?itok=Z-ujUOUr"
+												 src="{{asset ('img/galeria/teste/3.png')}}"
 												 alt="Another alt text">
 								</a>
 						</div>	
+						<!-- /Elem -->
 
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Linguinea"
-									 data-image="https://www.guidedogs.org/wp-content/uploads/2015/05/Dog-Im-Not.jpg"
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/4.png')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://www.guidedogs.org/wp-content/uploads/2015/05/Dog-Im-Not.jpg"
+												 src="{{asset ('img/galeria/teste/4.png')}}"
 												 alt="Another alt text">
 								</a>
-						</div>		
+						</div>						
+						<!-- /Elem -->	
+
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Linguinea 2"
-									 data-image="https://images.theconversation.com/files/205966/original/file-20180212-58348-7huv6f.jpeg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/5.png')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://images.theconversation.com/files/205966/original/file-20180212-58348-7huv6f.jpeg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
+												 src="{{asset ('img/galeria/teste/5.png')}}"
 												 alt="Another alt text">
 								</a>
 						</div>	
+						<!-- /Elem -->		
 
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bundinha 2"
-									 data-image="https://vetstreet.brightspotcdn.com/dims4/default/5b3ffe7/2147483647/thumbnail/180x180/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F8e%2F4e3910c36111e0bfca0050568d6ceb%2Ffile%2Fhub-dogs-puppy.jpg"
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/aula1.jpg')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://vetstreet.brightspotcdn.com/dims4/default/5b3ffe7/2147483647/thumbnail/180x180/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F8e%2F4e3910c36111e0bfca0050568d6ceb%2Ffile%2Fhub-dogs-puppy.jpg"
+												 src="{{asset ('img/galeria/teste/aula1.jpg')}}"
 												 alt="Another alt text">
 								</a>
 						</div>	
+						<!-- /Elem -->		
 
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bundinha"
-									 data-image="https://boygeniusreport.files.wordpress.com/2016/11/puppy-dog.jpg?quality=98&strip=all&w=782"
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/sapim1.jpg')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://boygeniusreport.files.wordpress.com/2016/11/puppy-dog.jpg?quality=98&strip=all&w=782"
+												 src="{{asset ('img/galeria/teste/sapim1.jpg')}}"
 												 alt="Another alt text">
 								</a>
 						</div>	
+						<!-- /Elem -->		
 
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Pastorzineo"
-									 data-image="https://o.aolcdn.com/images/dims3/GLOB/crop/4854x3182+0+0/resize/1028x675!/format/jpg/quality/85/http%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Ff33fccca6149a8881f55cfbf6ac7ba1b%2F206112280%2Fgerman-shepherd-puppy-in-the-grass-picture-id841811318"
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/sapim2.jpg')}}"
 									 data-target="#image-gallery">
 										<img class="img-thumbnail"
-												 src="https://o.aolcdn.com/images/dims3/GLOB/crop/4854x3182+0+0/resize/1028x675!/format/jpg/quality/85/http%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Ff33fccca6149a8881f55cfbf6ac7ba1b%2F206112280%2Fgerman-shepherd-puppy-in-the-grass-picture-id841811318"
+												 src="{{asset ('img/galeria/teste/sapim2.jpg')}}"
 												 alt="Another alt text">
 								</a>
-						</div>							
+						</div>	
+						<!-- /Elem -->	
+
+						<!-- Elemento Dinâmico (SELECT FROM BD WHERE ALBUM == $GET) -->
+						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+								<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Título da imagem"
+									 data-image="{{asset ('img/galeria/teste/sapim3.jpg')}}"
+									 data-target="#image-gallery">
+										<img class="img-thumbnail"
+												 src="{{asset ('img/galeria/teste/sapim3.jpg')}}"
+												 alt="Another alt text">
+								</a>
+						</div>	
+						<!-- /Elem -->																																					
 					</div>
 
 					<!-- Modal Estático -->
